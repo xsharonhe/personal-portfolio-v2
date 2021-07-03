@@ -2,9 +2,12 @@ import { createGlobalStyle, DefaultTheme } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
     @font-face {
-        font-family: 'Calibre-Regular';
-        src: url('../public/fonts/Calibre-Regular.ttf');
-        font-weight: normal;
+        font-family: 'Calibre';
+        src: local('Calibre Regular'), local('Calibre-Regular'),
+            url('../public/fonts/Calibre-Regular.woff2') format('woff2'),
+            url('../public/fonts/Calibre-Regular.woff') format('woff'),
+            url('../public/fonts/Calibre-Regular.ttf') format('truetype');
+        font-weight: 400;
         font-style: normal;
     }
 
@@ -25,7 +28,7 @@ export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
             overflow-y: scroll;
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
-            padding: 40px 20px;
+            padding: 40px 0;
         }
         a {
             text-decoration: none;

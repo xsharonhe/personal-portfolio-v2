@@ -25,10 +25,6 @@ const NAV_ITEMS = [
     }
 ];
 
-interface INavItemsProps {
-    isHidden: boolean;
-};
-
 export default function Navbar() {
     const [isHidden, setIsHidden] = useState(false);
     const handleClick = () => setIsHidden(!isHidden);
@@ -46,8 +42,8 @@ export default function Navbar() {
                     </a>
                 </Link>
                 <div onClick={handleClick}>
-                    {!isHidden && <NavbarIcon as={ReorderThree} />}
-                    {!!isHidden && <NavbarIcon as={CloseOutline} />}
+                    {isHidden ? <NavbarIcon as={CloseOutline} isHidden={isHidden} />
+                            : <NavbarIcon as={ReorderThree} isHidden={isHidden} />}
                 </div>
             </Section>
             <NavItems isHidden={isHidden}>
@@ -106,10 +102,23 @@ const Section = styled.div`
             width: 100%;
             `
     )};
+    ${media(
+        700,
+        `
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            `
+    )};
 `;
-const NavItem = styled.p`
+const NavItem = styled.h3`
     margin-right: 5vw;
+    font-size: 24px;
 `;
+interface INavItemsProps {
+    isHidden: boolean;
+};
 const NavItems = styled(Section)<INavItemsProps>`
     @media only screen and (max-width: 700px) {
         display: ${(props) => (props.isHidden ? "flex" : "none")};
@@ -128,7 +137,7 @@ const Highlight = styled.span`
     ${({ theme }) => `
         :hover {
             display: block;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, rgba(170, 223, 237, 0.5) 35%);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 80%, rgba(170, 223, 237, 0.5) 20%);
             transform: translate3d(0,5px,0);
             transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
         }
@@ -140,12 +149,12 @@ const Icon = styled.svg`
     margin-right: 3vw;
     :hover {
         cursor: pointer;
-        transform: translate3d(0,5px,0);
+        transform: translate3d(0, 5px, 0);
         opacity: 0.7;
         transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
     }
 `;
-const NavbarIcon = styled.svg`
+const NavbarIcon = styled.svg<INavItemsProps>`
     height: 60px;
     width: 60px;
     display: none;
@@ -154,13 +163,15 @@ const NavbarIcon = styled.svg`
         `
             display: flex;
             cursor: pointer;
-            margin-top: 10px;
             opacity: 1;
             :hover {
-                opacity: 0.8;
+                opacity: 0.;
             }
             `
     )};
+    @media only screen and (max-width: 700px) {
+        margin-right: ${(props) => (props.isHidden ? "2vw" : "10vw")};
+    }
 `;
 const IconWrapper = styled.div`
     ${media(

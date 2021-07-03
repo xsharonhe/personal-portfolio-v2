@@ -24,7 +24,7 @@ const Wrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     ${media(
-        "tablet",
+        "half_laptop",
         `
             flex-direction: column;
             text-align: center;
@@ -32,26 +32,20 @@ const Wrapper = styled.div`
     )};
 `;
 const Title = styled.h1`
-    font-size: 70px;
+    font-size: 72px;
     ${({ theme }) => `
         font-family: ${theme.font.header};
     `};
     ${media(
-        "tablet",
+        "half_laptop",
         `
-            font-size: 56px;
+            font-size: 60px;
             `
     )};
     ${media(
         "tablet",
         `
-            font-size: 56px;
-            `
-    )};
-    ${media(
-        "mobile",
-        `
-            font-size: 42px;
+            font-size: 50px;
             `
     )};
 `;

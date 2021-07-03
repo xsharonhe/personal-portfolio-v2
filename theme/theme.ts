@@ -43,7 +43,8 @@ export const baseTheme: IBaseTemplate = {
   media: {
     small: "325",
     mobile: "414",
-    tablet: "900",
+    tablet: "864",
+    half_laptop: "1050",
     laptop: "1480",
     desktop: "2560",
   },

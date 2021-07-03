@@ -1,31 +1,31 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
+import { Github } from "@styled-icons/boxicons-logos";
 import { LinkedinSquare } from "@styled-icons/boxicons-logos/LinkedinSquare";
-import { Github } from "@styled-icons/boxicons-logos/Github";
 import Logo from "../../public/logo.svg";
+import { media } from "../../utils/media";
+import { CONSTANTS } from "../../utils/constants";
 
 const NAV_ITEMS = [
-    "home",
-    "projects",
-    "wip"
+    {
+        name: "Home",
+        href: "",
+    },
+    {
+        name: "Projects",
+        href: "projects",
+    },
+    {   
+        name: "WIP",
+        href: "wip",
+    }
 ];
 
 export default function Navbar() {
     return (
         <SNavbar>
-            <Section style={{ justifyContent: "space-between"}}>
-                {NAV_ITEMS.map((item) => (
-                    <NavItem key={item}>
-                        <Link href={`/${item}`}>
-                            <a>
-                                {item}
-                            </a>
-                        </Link>
-                    </NavItem> 
-                ))} 
-            </Section>
-            <Section style={{ justifyContent: "center"}}>
+            <Section>
                 <Link href="/">
                     <a>
                         <Image
@@ -37,32 +37,67 @@ export default function Navbar() {
                     </a>
                 </Link>
             </Section>
-            <Section style={{ justifyContent: "flex-end" }}>
-                <Icon as={Github} />
-                <Icon as={LinkedinSquare} />
+            <Section>
+                {NAV_ITEMS.map((item) => (
+                    <NavItem key={item.name}>
+                        <Highlight>
+                            <Link href={`/${item.href}`}>
+                                <a>
+                                    {item.name}
+                                </a>
+                            </Link>
+                        </Highlight>
+                    </NavItem> 
+                ))} 
+                <a href={CONSTANTS.github} target="_blank" rel="noopener noreferrer">
+                    <Icon as={Github} />
+                </a>
+                <a href={CONSTANTS.linkedin} target="_blank" rel="noopener noreferrer">
+                    <Icon as={LinkedinSquare} />
+                </a>
             </Section>
         </SNavbar>
     );
 };
 
 const SNavbar = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 5%;
+    padding: 0 3%;
+    ${media(
+        "mobile",
+        `
+            padding: 0;
+            `
+    )};
 `;
 const Section = styled.div`
     display: flex;
     flex-direction: row;
+    align-items: center;
 `;
 const NavItem = styled.p`
-    margin-right: 15%;
+    margin-right: 5vw;
+`;
+const Highlight = styled.span`
+    ${({ theme }) => `
+        :hover {
+            display: block;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, rgba(170, 223, 237, 0.5) 35%);
+            transform: translate3d(0,5px,0);
+            transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
+        }
+    `};
 `;
 const Icon = styled.svg`
-    height: 50px;
-    width: 50px;
-    margin-left: 10%;
+    height: 40px;
+    width: 40px;
+    margin-right: 3vw;
     :hover {
+        cursor: pointer;
+        transform: translate3d(0,5px,0);
         opacity: 0.7;
+        transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
     }
 `;

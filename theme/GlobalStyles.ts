@@ -2,8 +2,8 @@ import { createGlobalStyle, DefaultTheme } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
     @font-face {
-        font-family: 'Biotif-Regular';
-        src: url('/fonts/Biotif-Regular.ttf');
+        font-family: 'Calibre-Regular';
+        src: url('../public/fonts/Calibre-Regular.ttf');
         font-weight: normal;
         font-style: normal;
     }
@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
             overflow-y: scroll;
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
-            padding: 40px;
+            padding: 40px 20px;
         }
         a {
             text-decoration: none;

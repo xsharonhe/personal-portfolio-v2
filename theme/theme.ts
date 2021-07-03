@@ -24,7 +24,7 @@ interface IBaseTemplate {
 export const baseTheme: IBaseTemplate = {
   font: {
       header: "'General Sans', sans-serif",
-      body: "'Biotif-Regular', sans-serif"
+      body: "'Calibre-Regular', sans-serif"
   },
   size: {
     default: "1.4rem",
@@ -38,6 +38,7 @@ export const baseTheme: IBaseTemplate = {
   radius: {
     default: "8px",
     border: "20px",
+    button: "44px"
   },
   media: {
     small: "325",
@@ -52,7 +53,7 @@ export const baseTheme: IBaseTemplate = {
     // scale: "scale(1.03)",
   },
   colors: {
-        primary: '#AADFED',
+        primary: 'rgba(170, 223, 237, 1)',
   }
 };
 

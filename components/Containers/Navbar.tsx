@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +17,7 @@ const NAV_ITEMS = [
     },
     {
         name: "About",
-        href: "/about"
+        href: "/about",
     },
     {
         name: "Projects",
@@ -51,17 +51,42 @@ export function Navbar() {
                 </div>
             </Section>
             <NavItems isHidden={isHidden}>
-                {NAV_ITEMS.map((item) => (
-                    <NavItem key={item.name}>
+                    <NavItem key={`navitem__home`}>
                         <Highlight>
-                            <Link href={`/${item.href}`}>
+                            <Link href="/">
                                 <a>
-                                    {item.name}
+                                    Home
                                 </a>
                             </Link>
                         </Highlight>
                     </NavItem> 
-                ))} 
+                    <NavItem key={`navitem__home`}>
+                        <Highlight>
+                            <Link href="/about">
+                                <a>
+                                    About
+                                </a>
+                            </Link>
+                        </Highlight>
+                    </NavItem> 
+                    <NavItem key={`navitem__home`}>
+                        <Highlight>
+                            <Link href="/projects">
+                                <a>
+                                    Projects
+                                </a>
+                            </Link>
+                        </Highlight>
+                    </NavItem> 
+                    <NavItem key={`navitem__home`}>
+                        <Highlight>
+                            <Link href="/wip">
+                                <a>
+                                    WIP
+                                </a>
+                            </Link>
+                        </Highlight>
+                    </NavItem> 
                 <IconWrapper>
                     <a href={CONSTANTS.github} target="_blank" rel="noopener noreferrer">
                         <Icon as={Github} />
@@ -117,9 +142,10 @@ const Section = styled.div`
             `
     )};
 `;
-const NavItem = styled.h3`
+const NavItem = styled.span`
     margin-right: 5vw;
     font-size: 20px;
+    font-weight: bold;
 `;
 interface INavItemsProps {
     isHidden: boolean;
@@ -147,6 +173,13 @@ const Highlight = styled.span`
             transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
         }
     `};
+`;
+const Dropdown = styled.div`
+    display: none;
+    color: black;
+    :hover {
+        display: block;
+    }
 `;
 const BottomNavigation = styled.hr<INavItemsProps>`
     @media only screen and (max-width: 700px) {

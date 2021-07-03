@@ -1,8 +1,12 @@
+import { useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import { Github } from "@styled-icons/boxicons-logos";
 import { LinkedinSquare } from "@styled-icons/boxicons-logos/LinkedinSquare";
+import { ReorderThree } from "@styled-icons/ionicons-solid/ReorderThree";
+import { CloseOutline } from "@styled-icons/evaicons-outline/CloseOutline";
+
 import Logo from "../../public/logo.svg";
 import { media } from "../../utils/media";
 import { CONSTANTS } from "../../utils/constants";
@@ -22,10 +26,16 @@ const NAV_ITEMS = [
     }
 ];
 
+interface INavItemsProps {
+    isHidden: boolean;
+};
+
 export default function Navbar() {
+    const [isHidden, setIsHidden] = useState(false);
+    const handleClick = () => setIsHidden(!isHidden);
     return (
         <SNavbar>
-            <Section>
+            <Section >
                 <Link href="/">
                     <a>
                         <Image
@@ -36,8 +46,12 @@ export default function Navbar() {
                         />
                     </a>
                 </Link>
+                <div onClick={handleClick}>
+                    {!isHidden && <NavbarIcon as={ReorderThree} />}
+                    {!!isHidden && <NavbarIcon as={CloseOutline} />}
+                </div>
             </Section>
-            <Section>
+            <NavItems isHidden={isHidden}>
                 {NAV_ITEMS.map((item) => (
                     <NavItem key={item.name}>
                         <Highlight>
@@ -49,13 +63,15 @@ export default function Navbar() {
                         </Highlight>
                     </NavItem> 
                 ))} 
-                <a href={CONSTANTS.github} target="_blank" rel="noopener noreferrer">
-                    <Icon as={Github} />
-                </a>
-                <a href={CONSTANTS.linkedin} target="_blank" rel="noopener noreferrer">
-                    <Icon as={LinkedinSquare} />
-                </a>
-            </Section>
+                <IconWrapper>
+                    <a href={CONSTANTS.github} target="_blank" rel="noopener noreferrer">
+                        <Icon as={Github} />
+                    </a>
+                    <a href={CONSTANTS.linkedin} target="_blank" rel="noopener noreferrer">
+                        <Icon as={LinkedinSquare} />
+                    </a>
+                </IconWrapper>
+            </NavItems>
         </SNavbar>
     );
 };
@@ -65,6 +81,12 @@ const SNavbar = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0 3%;
+    ${media(
+        700,
+        `
+            flex-direction: column;
+            `
+    )};
     ${media(
         "mobile",
         `
@@ -76,9 +98,32 @@ const Section = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    ${media(
+        700,
+        `
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            `
+    )};
 `;
 const NavItem = styled.p`
     margin-right: 5vw;
+`;
+const NavItems = styled(Section)<INavItemsProps>`
+    @media only screen and (max-width: 700px) {
+        display: ${(props) => (props.isHidden ? "flex" : "none")};
+    }
+    ${media(
+        700,
+        `
+            flex-direction: column;
+            align-items: flex-end;
+            padding-bottom: 40px;
+            border-bottom: 3px solid black;
+            `
+    )};
 `;
 const Highlight = styled.span`
     ${({ theme }) => `
@@ -100,4 +145,31 @@ const Icon = styled.svg`
         opacity: 0.7;
         transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
     }
+`;
+const NavbarIcon = styled.svg`
+    height: 60px;
+    width: 60px;
+    display: none;
+    ${media(
+        700,
+        `
+            display: flex;
+            cursor: pointer;
+            margin-top: 10px;
+            opacity: 1;
+            :hover {
+                opacity: 0.8;
+            }
+            `
+    )};
+`;
+const IconWrapper = styled.div`
+    ${media(
+        700,
+        `
+            display: flex;
+            flex-direction: row;
+            margin-top: 10px;
+            `
+    )};
 `;

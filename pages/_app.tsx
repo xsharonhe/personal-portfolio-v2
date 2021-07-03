@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 import { ThemeProvider } from "styled-components";
 
 import { GlobalStyle } from "../theme/GlobalStyles";
-import { lightTheme } from "../theme/theme";
+import { baseTheme } from "../theme/theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Sharon He</title>
         <meta name="title" content="Sharon He" />
       </Head>
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={baseTheme}>
         <Component {...pageProps} />
         <GlobalStyle />
       </ThemeProvider>

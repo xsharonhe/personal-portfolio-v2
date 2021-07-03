@@ -2,35 +2,22 @@ import "styled-components";
 
 interface IBaseTemplate {
     font: {
-        header: string;
-        body: string;
+        [key: string]: string;
     },
     size: {
-        default: string | number;
-        small: string | number;
-        h1: string | number;
-        h2: string | number;
-        h3: string | number;
-        defaultLarger: string | number;
-        large: string | number;
+        [key: string]: string | number;
     },
     radius: {
-        default: string;
-        border: string;
+        [key: string]: string | number;
     },
     media: {
         [key: string]: number | string;
     },
     transitions: {
-        cubicBezier: string;
-    }
-};
-
-declare module 'styled-components' {
-    export interface DefaultTheme extends IBaseTemplate {
-        colors: {
-            primary: string;
-        }
+        [key: string]: string;
+    },
+    colors: {
+        [key: string]: string;
     }
 };
 
@@ -63,19 +50,8 @@ export const baseTheme: IBaseTemplate = {
     cubicBezier: "all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)",
     // opacity: "opacity ease 500ms",
     // scale: "scale(1.03)",
-  }
-};
-
-export const lightTheme = {
-    ...baseTheme,
-    colors: {
+  },
+  colors: {
         primary: '#79a3b1',
-    },
-};
-
-export const darkTheme = {
-    ...baseTheme,
-    colors: {
-        primary: '#bbe1fa',
-    },
+  }
 };

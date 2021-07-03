@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <>
       <Title>
-        Project Showcase
+        Hi, I am Sharon.
       </Title>
-      <p>Hello, I'm Sharon.</p>
+      <p>I love to code.</p>
     </>
   )
 };

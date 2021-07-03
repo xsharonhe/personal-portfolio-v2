@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
             overflow-y: scroll;
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
-            padding: 40px 0;
+            padding: 20px 0;
         }
         a {
             text-decoration: none;

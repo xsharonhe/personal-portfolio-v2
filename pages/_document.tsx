@@ -1,8 +1,12 @@
+import styled from "styled-components";
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 import { ServerStyleSheet } from "styled-components";
 
 interface IMyDocumentProps {
     styleTags: string;
+}
+interface ILinkProps {
+    crossorigin?: boolean;
 }
 
 class MyDocument extends Document<IMyDocumentProps> {
@@ -40,6 +44,19 @@ class MyDocument extends Document<IMyDocumentProps> {
                         href="https://api.fontshare.com/css?f[]=general-sans@500,600,700&display=swap" 
                         rel="stylesheet" 
                     />
+                    <link 
+                        rel="preconnect" 
+                        href="https://fonts.googleapis.com"
+                    />
+                    <SLink 
+                        rel="preconnect" 
+                        href="https://fonts.gstatic.com" 
+                        crossorigin
+                    />
+                    <link 
+                        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" 
+                        rel="stylesheet"
+                    />
                 </Head>
                 <body>
                     <Main />
@@ -49,5 +66,7 @@ class MyDocument extends Document<IMyDocumentProps> {
         )
     }
 }
+
+const SLink = styled.link<ILinkProps>``;
 
 export default MyDocument;

@@ -24,7 +24,8 @@ interface IBaseTemplate {
 export const baseTheme: IBaseTemplate = {
   font: {
       header: "'General Sans', sans-serif",
-      body: "'Calibre-Regular', sans-serif"
+      body: "'Calibre-Regular', sans-serif",
+      code: "'Fira Code', sans-serif"
   },
   size: {
     default: "1.4rem",
@@ -55,9 +56,11 @@ export const baseTheme: IBaseTemplate = {
   },
   colors: {
         primary: 'rgba(170, 223, 237, 1)',
+        pink: "#ff79c6",
+        purple: "#bd93f9",
+        yellow: "f1f8ac",
   }
 };
-
 declare module 'styled-components' {
     export interface DefaultTheme extends IBaseTemplate {
     }

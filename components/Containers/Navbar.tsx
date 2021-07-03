@@ -10,25 +10,6 @@ import { CloseOutline } from "@styled-icons/evaicons-outline/CloseOutline";
 import Logo from "../../public/logo.svg";
 import { CONSTANTS, media } from "../../utils";
 
-const NAV_ITEMS = [
-    {
-        name: "Home",
-        href: "",
-    },
-    {
-        name: "About",
-        href: "/about",
-    },
-    {
-        name: "Projects",
-        href: "projects",
-    },
-    {   
-        name: "WIP",
-        href: "wip",
-    }
-];
-
 export function Navbar() {
     const [isHidden, setIsHidden] = useState(false);
     const handleClick = () => setIsHidden(!isHidden);
@@ -137,7 +118,6 @@ const Section = styled.div`
 const NavItem = styled.span`
     margin-right: 5vw;
     font-size: 20px;
-    font-weight: bold;
     ${media(
         700,
         `

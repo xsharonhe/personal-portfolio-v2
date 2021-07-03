@@ -8,8 +8,7 @@ import { ReorderThree } from "@styled-icons/ionicons-solid/ReorderThree";
 import { CloseOutline } from "@styled-icons/evaicons-outline/CloseOutline";
 
 import Logo from "../../public/logo.svg";
-import { media } from "../../utils/media";
-import { CONSTANTS } from "../../utils/constants";
+import { CONSTANTS, media } from "../../utils";
 
 const NAV_ITEMS = [
     {

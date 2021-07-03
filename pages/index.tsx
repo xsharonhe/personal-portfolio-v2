@@ -1,14 +1,12 @@
 import styled from "styled-components";
 import Navbar from "../components/Containers/Navbar";
+import Hero from "../components/sections/Hero";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <Title>
-        Hi, I am Sharon.
-      </Title>
-      <p>I love to code.</p>
+      <Hero />
     </>
   )
 };

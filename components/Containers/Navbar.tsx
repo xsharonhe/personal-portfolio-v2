@@ -60,7 +60,7 @@ export function Navbar() {
                             </Link>
                         </Highlight>
                     </NavItem> 
-                    <NavItem key={`navitem__home`}>
+                    <NavItem key={`navitem__about`}>
                         <Highlight>
                             <Link href="/about">
                                 <a>
@@ -69,7 +69,7 @@ export function Navbar() {
                             </Link>
                         </Highlight>
                     </NavItem> 
-                    <NavItem key={`navitem__home`}>
+                    <NavItem key={`navitem__projects`}>
                         <Highlight>
                             <Link href="/projects">
                                 <a>
@@ -78,7 +78,7 @@ export function Navbar() {
                             </Link>
                         </Highlight>
                     </NavItem> 
-                    <NavItem key={`navitem__home`}>
+                    <NavItem key={`navitem__wip`}>
                         <Highlight>
                             <Link href="/wip">
                                 <a>
@@ -103,6 +103,7 @@ export function Navbar() {
 
 const SNavbar = styled.div`
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0 3%;
@@ -123,22 +124,13 @@ const Section = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 100%;
     ${media(
         700,
         `
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            width: 100%;
-            `
-    )};
-    ${media(
-        700,
-        `
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
             `
     )};
 `;
@@ -146,6 +138,12 @@ const NavItem = styled.span`
     margin-right: 5vw;
     font-size: 20px;
     font-weight: bold;
+    ${media(
+        700,
+        `
+            padding-bottom: 20px;
+            `
+    )};
 `;
 interface INavItemsProps {
     isHidden: boolean;
@@ -157,9 +155,9 @@ const NavItems = styled(Section)<INavItemsProps>`
     ${media(
         700,
         `
+            padding-bottom: 20px;
             flex-direction: column;
             align-items: flex-end;
-            padding-bottom: 40px;
             margin-right: 10vw;
             `
     )};
@@ -174,18 +172,10 @@ const Highlight = styled.span`
         }
     `};
 `;
-const Dropdown = styled.div`
-    display: none;
-    color: black;
-    :hover {
-        display: block;
-    }
-`;
 const BottomNavigation = styled.hr<INavItemsProps>`
     @media only screen and (max-width: 700px) {
         display: ${(props) => (props.isHidden ? "flex" : "none")};
-        border: 3px solid black;
-        radius: 4px;
+        border: 2px solid black;
         width: 80%;
     }
 `;
@@ -210,19 +200,19 @@ const NavbarIcon = styled.svg`
             display: flex;
             cursor: pointer;
             opacity: 1;
-            margin-right: 10vw;
+            margin-right: 5vw;
             :hover {
-                opacity: 0.;
+                opacity: 0.8;
             }
             `
     )};
 `;
 const IconWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
     ${media(
         700,
         `
-            display: flex;
-            flex-direction: row;
             margin-top: 10px;
             `
     )};

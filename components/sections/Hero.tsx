@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Highlight } from "../Texts";
 import puzzleImg from "../../public/home/home-mobile.svg";
 import { CodeBlock } from "../Containers";
-import { media, } from "../../utils";
+import { media } from "../../utils";
 
 const getCodeSnippet = () => {
      return (
@@ -18,26 +18,23 @@ const getCodeSnippet = () => {
             <span>
                 {'    "currently": '}
                 <span style={{ color: "#f1fa8c" }}>
-                    {'"swe intern @ GEOTAB",'}
+                    {'"@geotab, @pumprofessionals, @waterloo"'}
                 </span>
             </span>
             <span>
-                {'    "volunteering": '}
-                <span style={{ color: "#f1fa8c" }}>
-                    {'"tech head @ PuMP",'}
-                </span>
+                {'    "interests": ['}
+            </span>
+            <span style={{ color: "#f1fa8c" }}>
+                {'        "data",'}
+            </span>
+            <span style={{ color: "#f1fa8c" }}>
+                {'        "infrastructure",'}
+            </span>
+            <span style={{ color: "#f1fa8c" }}>
+                {'        "econ"'}
             </span>
             <span>
-                {'    "edu": '}
-                <span style={{ color: "#f1fa8c" }}>
-                    {'"soft eng \'25 @ waterloo",'}
-                </span>
-            </span>
-            <span>
-                {'    "interests": '}
-                <span style={{ color: "#f1fa8c" }}>
-                    {'"data, infrastructure, economics",'}
-                </span>
+                {'    ],'}
             </span>
             <span>
                 {'    "hobbies": '}
@@ -65,7 +62,7 @@ export function Hero() {
                 <br />
                 <CodeWrapper>
                     <CodeBlock 
-                        lineNumbers={[1, 2, 3, 4, 5, 6]}
+                        lineNumbers={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
                         codeSnippet={memoizedCodeSnippet()}
                     />
                 </CodeWrapper>
@@ -96,7 +93,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 40px;
+    padding: 0 40px 0px 60px;
     ${media(
         "half_laptop",
         `
@@ -104,6 +101,7 @@ const Wrapper = styled.div`
             flex-direction: column;
             justify-content: center;
             text-align: center;
+            padding-bottom: 60px;
             `
     )};
 `;

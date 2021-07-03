@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../../utils";
 
 interface ICodeBlockProps extends React.HTMLAttributes<HTMLDivElement>{
     lineNumbers: number[];
@@ -39,6 +40,8 @@ export function CodeBlock({
 
 const STable = styled.table`
     background-color: #282a36;
+    display: block;
+    overflow-x: scroll;
     padding: 0 20px;
     ${({ theme }) => `
         code {
@@ -49,6 +52,12 @@ const STable = styled.table`
             }
         }
     `};
+    ${media(
+        `mobile`,
+        `
+            font-size: 14px;
+        `
+    )}
 `;
 const LineNumbers = styled.pre`
     code {

@@ -36,8 +36,10 @@ class MyDocument extends Document<IMyDocumentProps> {
         return (
             <Html lang="en">
                 <Head>
-                    <link href="https://api.fontshare.com/css?f[]=general-sans@500&display=swap" rel="stylesheet" />
-                    {this.props.styleTags}
+                    <link 
+                        href="https://api.fontshare.com/css?f[]=general-sans@500,600,700&display=swap" 
+                        rel="stylesheet" 
+                    />
                 </Head>
                 <body>
                     <Main />

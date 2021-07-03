@@ -44,7 +44,7 @@ export const baseTheme: IBaseTemplate = {
     small: "325",
     mobile: "414",
     tablet: "864",
-    half_laptop: "1050",
+    half_laptop: "1080",
     laptop: "1480",
     desktop: "2560",
   },

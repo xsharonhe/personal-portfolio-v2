@@ -7,7 +7,7 @@ interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement>{
     borderColor?: string;
 };
 
-const Button: React.FC<IButtonProps> = ({
+export const Button: React.FC<IButtonProps> = ({
   color,
   backgroundColor,
   borderColor,
@@ -55,5 +55,3 @@ const SButton = styled.button<IButtonProps>`
         }
     `};
 `;
-
-export default Button;

@@ -25,7 +25,7 @@ const NAV_ITEMS = [
     }
 ];
 
-export default function Navbar() {
+export function Navbar() {
     const [isHidden, setIsHidden] = useState(false);
     const handleClick = () => setIsHidden(!isHidden);
     return (
@@ -42,8 +42,8 @@ export default function Navbar() {
                     </a>
                 </Link>
                 <div onClick={handleClick}>
-                    {isHidden ? <NavbarIcon as={CloseOutline} isHidden={isHidden} />
-                            : <NavbarIcon as={ReorderThree} isHidden={isHidden} />}
+                    {isHidden ? <NavbarIcon as={CloseOutline} />
+                            : <NavbarIcon as={ReorderThree} />}
                 </div>
             </Section>
             <NavItems isHidden={isHidden}>
@@ -67,6 +67,7 @@ export default function Navbar() {
                     </a>
                 </IconWrapper>
             </NavItems>
+            {!!isHidden && <BottomNavigation isHidden={isHidden} />}
         </SNavbar>
     );
 };
@@ -114,7 +115,7 @@ const Section = styled.div`
 `;
 const NavItem = styled.h3`
     margin-right: 5vw;
-    font-size: 24px;
+    font-size: 20px;
 `;
 interface INavItemsProps {
     isHidden: boolean;
@@ -129,7 +130,7 @@ const NavItems = styled(Section)<INavItemsProps>`
             flex-direction: column;
             align-items: flex-end;
             padding-bottom: 40px;
-            border-bottom: 3px solid black;
+            margin-right: 10vw;
             `
     )};
 `;
@@ -143,6 +144,14 @@ const Highlight = styled.span`
         }
     `};
 `;
+const BottomNavigation = styled.hr<INavItemsProps>`
+    @media only screen and (max-width: 700px) {
+        display: ${(props) => (props.isHidden ? "flex" : "none")};
+        border: 3px solid black;
+        radius: 4px;
+        width: 80%;
+    }
+`;
 const Icon = styled.svg`
     height: 40px;
     width: 40px;
@@ -154,7 +163,7 @@ const Icon = styled.svg`
         transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
     }
 `;
-const NavbarIcon = styled.svg<INavItemsProps>`
+const NavbarIcon = styled.svg`
     height: 60px;
     width: 60px;
     display: none;
@@ -164,14 +173,12 @@ const NavbarIcon = styled.svg<INavItemsProps>`
             display: flex;
             cursor: pointer;
             opacity: 1;
+            margin-right: 10vw;
             :hover {
                 opacity: 0.;
             }
             `
     )};
-    @media only screen and (max-width: 700px) {
-        margin-right: ${(props) => (props.isHidden ? "2vw" : "10vw")};
-    }
 `;
 const IconWrapper = styled.div`
     ${media(

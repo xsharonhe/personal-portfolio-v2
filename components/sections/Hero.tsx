@@ -5,10 +5,12 @@ import { media } from "../../utils";
 
 const HEADLINE = "Hi, I'm Sharon.";
 
-export default function Hero() {
+export function Hero() {
     return (
         <Wrapper>
-            <Title>{HEADLINE}</Title>
+            <Section>
+                <Title>{HEADLINE}</Title>
+            </Section>
             <Image 
                 src={puzzleImg} 
                 alt="Puzzle image"
@@ -23,6 +25,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 0 40px;
     ${media(
         "half_laptop",
         `
@@ -31,8 +34,11 @@ const Wrapper = styled.div`
             `
     )};
 `;
+const Section = styled.div`
+`;
 const Title = styled.h1`
-    font-size: 72px;
+    font-size: 68px;
+    font-weight: 600;
     ${({ theme }) => `
         font-family: ${theme.font.header};
     `};

@@ -27,12 +27,12 @@ export const baseTheme: IBaseTemplate = {
       body: "'Biotif-Regular', sans-serif"
   },
   size: {
-    default: "1.25rem",
+    default: "1.4rem",
     small: "0.85rem",
     h1: "2rem",
     h2: "1.75rem",
     h3: "1.3rem",
-    defaultLarger: "1.5rem",
+    defaultLarger: "1.6rem",
     large: "2.5rem",
   },
   radius: {
@@ -52,6 +52,11 @@ export const baseTheme: IBaseTemplate = {
     // scale: "scale(1.03)",
   },
   colors: {
-        primary: '#79a3b1',
+        primary: '#AADFED',
   }
+};
+
+declare module 'styled-components' {
+    export interface DefaultTheme extends IBaseTemplate {
+    }
 };

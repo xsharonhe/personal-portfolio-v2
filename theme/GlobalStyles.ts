@@ -25,9 +25,11 @@ export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
             overflow-y: scroll;
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
+            padding: 40px;
         }
         a {
             text-decoration: none;
+            color: black;
         }
         ul {
             li {

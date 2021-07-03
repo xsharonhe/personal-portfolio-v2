@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import Navbar from "../components/Containers/Navbar";
 
 export default function Home() {
   return (
     <>
+      <Navbar />
       <Title>
         Hi, I am Sharon.
       </Title>

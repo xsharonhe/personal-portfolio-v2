@@ -4,11 +4,7 @@ import { ServerStyleSheet } from "styled-components";
 
 interface IMyDocumentProps {
     styleTags: string;
-}
-interface ILinkProps {
-    crossorigin?: boolean;
-}
-
+};
 class MyDocument extends Document<IMyDocumentProps> {
     static async getInitialProps(ctx: DocumentContext) {
         const sheet = new ServerStyleSheet();
@@ -67,6 +63,10 @@ class MyDocument extends Document<IMyDocumentProps> {
     }
 }
 
+
+interface ILinkProps {
+    crossorigin?: boolean;
+};
 const SLink = styled.link<ILinkProps>``;
 
 export default MyDocument;

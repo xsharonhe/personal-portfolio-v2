@@ -1,12 +1,11 @@
 import { useCallback } from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
+import { Highlight } from "../Texts";
 import puzzleImg from "../../public/home/home-mobile.svg";
 import { CodeBlock } from "../Containers";
-import { media } from "../../utils";
-
-const HEADLINE = "Hi, I'm Sharon.";
-const SUBHEADLINE = "I love all things code.";
+import { media, } from "../../utils";
 
 const getCodeSnippet = () => {
      return (
@@ -19,7 +18,19 @@ const getCodeSnippet = () => {
             <span>
                 {'    "currently": '}
                 <span style={{ color: "#f1fa8c" }}>
-                    {'"swe @ GEOTAB, head of tech @ PuMP",'}
+                    {'"swe intern @ GEOTAB",'}
+                </span>
+            </span>
+            <span>
+                {'    "volunteering": '}
+                <span style={{ color: "#f1fa8c" }}>
+                    {'"tech head @ PuMP",'}
+                </span>
+            </span>
+            <span>
+                {'    "edu": '}
+                <span style={{ color: "#f1fa8c" }}>
+                    {'"soft eng \'25 @ waterloo",'}
                 </span>
             </span>
             <span>
@@ -35,7 +46,7 @@ const getCodeSnippet = () => {
                 </span>
             </span>
             <span>
-                {"}"}
+                {"};"}
             </span>
         </>
     )
@@ -46,21 +57,37 @@ export function Hero() {
     return (
         <Wrapper>
             <Section>
-                <Title>{HEADLINE}</Title>
-                <p style={{ marginBottom: "40px" }}>
-                    {SUBHEADLINE}
-                </p>
-                <CodeBlock 
-                    lineNumbers={[1, 2, 3, 4, 5]}
-                    codeSnippet={memoizedCodeSnippet()}
-                />
+                <Title>Hi, I&apos;m Sharon</Title>
+                <SubHeadline>
+                    I love all things code and numbers. I am passionate about creating remarkable 
+                    digital experiences with a focus on <b>data</b> and <b>analytics</b>. 
+                </SubHeadline>
+                <br />
+                <CodeWrapper>
+                    <CodeBlock 
+                        lineNumbers={[1, 2, 3, 4, 5, 6]}
+                        codeSnippet={memoizedCodeSnippet()}
+                    />
+                </CodeWrapper>
+                <br />
             </Section>
-            <Image 
-                src={puzzleImg} 
-                alt="Puzzle image"
-                width={500}
-                height={500}
-            />
+            <PuzzleContainer>
+                <Image 
+                    src={puzzleImg} 
+                    alt="Puzzle image"
+                    width={600}
+                    height={600}
+                />
+                <div>
+                    <Link href="/about">
+                        <a>
+                            <Highlight>
+                                Why Puzzles?
+                            </Highlight>
+                        </a>
+                    </Link>
+                </div>
+            </PuzzleContainer>
         </Wrapper>
     );
 };
@@ -73,19 +100,48 @@ const Wrapper = styled.div`
     ${media(
         "half_laptop",
         `
+            width: 80%;
             flex-direction: column;
-            text-align: center;
             justify-content: center;
+            text-align: center;
+            `
+    )};
+`;
+const SubHeadline = styled.p`
+    span {  
+        color: black;
+    }
+    ${media(
+        "half_laptop",
+        `
+            width: 100%;
             `
     )};
 `;
 const Section = styled.div`
+    width: 60%;
     ${media(
         "half_laptop",
         `
-            margin: auto;
+            width: 100%;
+            margin-bottom: -60px;
             `
     )};
+`;
+const CodeWrapper = styled.div`
+    ${media(
+        "half_laptop",
+        `
+            display: flex;
+            justify-content: center;
+            `
+    )};
+`;
+const PuzzleContainer = styled.div`
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `;
 const Title = styled.h1`
     font-size: 68px;
@@ -97,6 +153,7 @@ const Title = styled.h1`
         "half_laptop",
         `
             font-size: 60px;
+            text-align: center;
             `
     )};
     ${media(

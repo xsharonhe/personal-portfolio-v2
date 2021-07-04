@@ -7,7 +7,7 @@ import { ReorderThree } from "@styled-icons/ionicons-solid/ReorderThree";
 import { CloseOutline } from "@styled-icons/evaicons-outline/CloseOutline";
 
 import Logo from "../../public/logo.svg";
-import { CONSTANTS, media } from "../../utils";
+import { media } from "../../utils";
 
 export function Navbar() {
     const [isHidden, setIsHidden] = useState(false);

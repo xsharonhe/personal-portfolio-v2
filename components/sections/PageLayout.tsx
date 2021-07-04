@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Navbar } from "../Containers";
+import { Navbar } from "./Navbar";
 import { media } from "../../utils";
 
 interface IPageLayoutProps {

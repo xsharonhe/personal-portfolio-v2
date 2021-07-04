@@ -2,10 +2,10 @@ import { GetStaticProps } from "next";
 import styled from "styled-components";
 import { PageLayout } from "../components/sections";
 import { IProjectProps, Project } from "../components/Containers/Project";
-import { getAllProjects } from "../utils/mdxUtils";
+import { getAllProjects } from "../utils/projectsUtils";
 import { media } from "../utils";
 
-interface IProjectsProps extends React.HTMLAttributes<HTMLDivElement>{
+export interface IProjectsProps extends React.HTMLAttributes<HTMLDivElement>{
     projects: IProjectProps[];
 };
 

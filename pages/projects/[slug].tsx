@@ -1,12 +1,11 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import { IProjectProps } from "../../components/Containers/Project";
 import { PageLayout } from "../../components/sections/PageLayout";
-import { getProject, getAllProjects } from "../../utils/mdxUtils";
+import { getProject, getAllProjects } from "../../utils/projectsUtils";
 
 interface IProjectsPageProps {
     source: MDXRemoteSerializeResult;
@@ -54,11 +53,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
   
   export const getStaticPaths: GetStaticPaths = async () => {
-    const posts = getAllProjects(["slug"]);
+    const projects = getAllProjects(["slug"]);
   
-    const paths = posts.map((post) => ({
+    const paths = projects.map((project) => ({
         params: {
-            slug: post.slug,
+            slug: project.slug,
         },
     }));
   

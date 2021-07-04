@@ -59,7 +59,8 @@ export const baseTheme: IBaseTemplate = {
         pink: "#ff79c6",
         purple: "#bd93f9",
         yellow: "f1f8ac",
-        grey: "#6D6E71"
+        grey: "#6D6E71",
+        green: "#B1CE99"
   }
 };
 declare module 'styled-components' {

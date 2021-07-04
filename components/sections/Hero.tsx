@@ -117,11 +117,13 @@ const SubHeadline = styled.p`
 `;
 const Section = styled.div`
     width: 60%;
+    margin-top: 20px;
     ${media(
         "half_laptop",
         `
             width: 100%;
             margin-bottom: -60px;
+            margin-top: 0;
             `
     )};
 `;

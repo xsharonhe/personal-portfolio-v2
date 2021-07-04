@@ -36,14 +36,14 @@ export function Project ({
             <Link href={`/projects/${slug}`}>
                 <a aria-label={title}>
                     <Section>
-                        <ImageWrapper>
-                            <Image 
-                                src={thumbnail} 
-                                alt={title} 
-                                width={450}
-                                height={450}
-                            />
-                        </ImageWrapper>
+                    <ImageWrapper>
+                        <Image
+                            alt="Mountains"
+                            src={thumbnail}
+                            height={450}
+                            width={350}
+                        />
+                    </ImageWrapper>
                         <Content>
                             {!!achievements && <SubContent>{achievements}</SubContent>}
                             <Title>{title}</Title>
@@ -65,13 +65,12 @@ export function Project ({
 
 const Wrapper = styled.div`
     margin-top: 20px;
-    border: 3px solid black;
+    border: 4px solid black;
     border-radius: 12px;
     margin-bottom: 30px;
-    height: 450px;
     ${({ theme }) => `
         :hover {
-            box-shadow: 8px 10px rgba(170, 223, 237, 0.5);
+            box-shadow: 8px 10px rgba(177, 206, 153, 0.5);
         }
         p {
             font-family: ${theme.font.body};
@@ -145,8 +144,9 @@ const STag = styled(Tag)`
     margin-bottom: 10px;
 `;
 const ImageWrapper = styled.div`
-    background-color: black;
     display: flex;
-    justify-content: center;
-    height: 450px;
+    border-radius: 8px 0 0 8px;
+    ${({ theme }) => `
+        background-color: ${theme.colors.green};
+    `};
 `;

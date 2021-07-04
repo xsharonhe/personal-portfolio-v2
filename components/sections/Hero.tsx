@@ -57,7 +57,7 @@ export function Hero() {
                 <Title>Hi, I&apos;m Sharon</Title>
                 <SubHeadline>
                     I love all things code and numbers. I am passionate about creating remarkable 
-                    digital experiences with a focus on <b>data</b> and <b>analytics</b>. 
+                    digital experiences with a focus on data and analytics. 
                 </SubHeadline>
                 <br />
                 <CodeWrapper>
@@ -93,7 +93,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 40px 0px 60px;
+    padding: 0 40px 60px 60px;
     ${media(
         "half_laptop",
         `
@@ -101,7 +101,6 @@ const Wrapper = styled.div`
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            padding-bottom: 60px;
             `
     )};
 `;

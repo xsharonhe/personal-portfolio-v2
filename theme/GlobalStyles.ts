@@ -40,7 +40,7 @@ export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
             }
         }
         span {
-            color: ${theme.colors.primary};
+            color: black;
         }
     `};
 `;

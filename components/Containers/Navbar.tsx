@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-import { Github } from "@styled-icons/boxicons-logos";
-import { LinkedinSquare } from "@styled-icons/boxicons-logos/LinkedinSquare";
+import { Button } from "../Inputs";
 import { ReorderThree } from "@styled-icons/ionicons-solid/ReorderThree";
 import { CloseOutline } from "@styled-icons/evaicons-outline/CloseOutline";
 
@@ -68,14 +67,9 @@ export function Navbar() {
                             </Link>
                         </Highlight>
                     </NavItem> 
-                <IconWrapper>
-                    <a href={CONSTANTS.github} target="_blank" rel="noopener noreferrer">
-                        <Icon as={Github} />
-                    </a>
-                    <a href={CONSTANTS.linkedin} target="_blank" rel="noopener noreferrer">
-                        <Icon as={LinkedinSquare} />
-                    </a>
-                </IconWrapper>
+                    <Button>
+                        Resume
+                    </Button>
             </NavItems>
             {!!isHidden && <BottomNavigation isHidden={isHidden} />}
         </SNavbar>

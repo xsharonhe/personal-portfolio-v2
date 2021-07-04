@@ -27,13 +27,13 @@ export const Button: React.FC<IButtonProps> = ({
 const SButton = styled.button<IButtonProps>`
   ${({
     theme,
-    color = "black",
-    backgroundColor = "primary",
-    borderColor = "primary",
+    color = "white",
+    backgroundColor = "black",
+    borderColor = "black",
   }) => `
         color: ${theme.colors[color] || color};
         border: 1px solid ${theme.colors[borderColor] || borderColor};
-        font-size: ${theme.size.default};
+        font-size: 20px;
         font-family: ${theme.font.body};
         text-decoration: none;
         cursor: pointer;

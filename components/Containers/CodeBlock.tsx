@@ -72,7 +72,7 @@ const Code = styled.pre`
     code {
         display: flex;
         flex-direction: column;
-        margin-left: 20px;
+        margin: 0 20px;
         span {
             text-align: left;
             span {

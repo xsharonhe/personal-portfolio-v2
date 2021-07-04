@@ -93,11 +93,11 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 40px 60px 60px;
+    padding-bottom: 40px;
     ${media(
         "half_laptop",
         `
-            width: 80%;
+            width: 100%;
             flex-direction: column;
             justify-content: center;
             text-align: center;

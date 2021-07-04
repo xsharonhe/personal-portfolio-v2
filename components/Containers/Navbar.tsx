@@ -115,6 +115,7 @@ const NavItem = styled.span`
     ${media(
         700,
         `
+            margin-right: 0;
             padding-bottom: 20px;
             `
     )};
@@ -131,8 +132,8 @@ const NavItems = styled(Section)<INavItemsProps>`
         `
             padding-bottom: 20px;
             flex-direction: column;
-            align-items: flex-end;
-            margin-right: 10vw;
+            align-items: center;
+            justify-content: center;
             `
     )};
 `;

@@ -52,7 +52,7 @@ export default function About() {
                                     building data intensive applications
                                 </Highlight>
                             </a>
-                            {", "}
+                            {", and "}
                             <a
                                 href="https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/" 
                                 target="_blank" 
@@ -73,7 +73,7 @@ export default function About() {
                                 </Highlight>
                             </a>
                             {". I am leading the engineering process of "}
-                            <Link href="/projects">
+                            <Link href="/projects/pump-redesign">
                                 <a>
                                     <Highlight>
                                         redesigning their website

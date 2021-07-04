@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
+import { Tag } from "../Inputs";
 import { media } from "../../utils";
 
 export interface IProjectProps {
@@ -10,7 +11,7 @@ export interface IProjectProps {
     title: string;
     subtitle?: string;
     description: string;
-    tags?: string[];
+    tags: string[];
     images?: string[];
     links?: string[];
     showcase?: string[];
@@ -24,7 +25,7 @@ export function Project ({
     subtitle = "",
     title,
     description,
-    tags = [],
+    tags,
     images = [],
     links = [],
     showcase = [],
@@ -39,13 +40,21 @@ export function Project ({
                             <Image 
                                 src={thumbnail} 
                                 alt={title} 
-                                width={300}
-                                height={300}
+                                width={450}
+                                height={450}
                             />
                         </ImageWrapper>
                         <Content>
-                            {!!achievements && <SubContent>{achievements.toUpperCase()}</SubContent>}
+                            {!!achievements && <SubContent>{achievements}</SubContent>}
                             <Title>{title}</Title>
+                            <TagContainer>
+                                {tags.map(tag => (
+                                    <STag key={tag}>{tag.toUpperCase()}</STag>
+                                ))}
+                            </TagContainer>
+                            <p>
+                                {description}
+                            </p>
                         </Content>
                     </Section>
                 </a>
@@ -59,7 +68,16 @@ const Wrapper = styled.div`
     border: 3px solid black;
     border-radius: 12px;
     margin-bottom: 30px;
-    height: 300px;
+    height: 450px;
+    ${({ theme }) => `
+        :hover {
+            box-shadow: 8px 10px rgba(170, 223, 237, 0.5);
+        }
+        p {
+            font-family: ${theme.font.body};
+            font-size: 18px;
+        }
+    `}
     :hover {
         transform: scale(1.03);
         transition: all ease 0.4s;
@@ -67,7 +85,10 @@ const Wrapper = styled.div`
     ${media(
         "tablet",
         `
-            height: auto;
+            height: auto; 
+            p {
+                padding: 5px 20px 0 20px;
+            }
         `
     )}
 `;
@@ -83,33 +104,49 @@ const Section = styled.div`
 `;
 const Content = styled.div`
     width: 60%;
-    padding: 25px;
+    padding: 15px 25px 35px 35px;
     ${media(
         "tablet",
         `
             width: 100%;
             text-align: center;
-            padding: 0;
+            padding: 0 0 30px 0;
         `
     )}
 `;
 const SubContent = styled.p`
     ${({ theme }) => ` 
         color: ${theme.colors.grey};
-        font-size: 16px;
+        font-family: ${theme.font.header};
+        font-size: 12px;
         margin-bottom: -10px;
     `};
 `;
 const Title = styled.h3`
-    ${({ theme }) => `
-        font-weight: 500;
-        font-size: 24px;
-        font-weight: bold;
-    `}
+    font-weight: 500;
+    font-size: 28px;
+    font-weight: bold;
+`;
+const TagContainer = styled.div`
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    ${media(
+        "tablet",
+        `
+            justify-content: center;
+        `
+    )}
+`;
+const STag = styled(Tag)`
+    margin-right: 10px;
+    margin-bottom: 10px;
 `;
 const ImageWrapper = styled.div`
     background-color: black;
     display: flex;
     justify-content: center;
-    height: 300px;
+    height: 450px;
 `;

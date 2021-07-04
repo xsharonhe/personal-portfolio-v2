@@ -10,7 +10,6 @@ interface IProjectsProps extends React.HTMLAttributes<HTMLDivElement>{
 };
 
 export default function Projects({ projects }: IProjectsProps) {
-    console.log(projects);
     return (
         <PageLayout title="Projects">
             <Wrapper>
@@ -54,11 +53,17 @@ export const getStaticProps: GetStaticProps = async () => {
 const Wrapper = styled.div`
     width: 60%;
     margin: auto;
-    padding-bottom: 60px;
+    padding: 0 20px 60px 20px;
+    ${media(
+        "tablet",
+        `
+            width: 80%;
+        `
+    )}
     ${media(
         "mobile",
         `
-            width: 100%;
+            width: 90%;
         `
     )}
 `;

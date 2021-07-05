@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 import { Navbar } from "./Navbar";
 import { media } from "../../utils";
@@ -18,8 +19,43 @@ export const PageLayout = ({ children, title }: IPageLayoutProps) => (
             </Wrapper>
         )}
         {children}
+        <Copyright>
+            <Image
+                src="/logo.svg"
+                alt="Logo"
+                width={50}
+                height={50}
+            />
+            <p>
+                Developed by Sharon He 
+                &copy; 
+                2021
+            </p>
+        </Copyright>
     </div>
 );
+
+const Copyright = styled.div`
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 50px;
+    
+    p {
+        font-size: 15px;
+    }
+
+    ${media(
+        "tablet",
+        `
+            margin: auto;
+            margin-right: 5%;
+            text-align: center;
+            justify-content: center;
+            `
+    )};
+`;
 const Wrapper = styled.div`
     display: flex;
     justify-content: center;
@@ -46,7 +82,7 @@ const Title = styled.h1`
             font-size: 50px;
             `
     )};
-        ${media(
+    ${media(
         601,
         `
             font-size: 32px;

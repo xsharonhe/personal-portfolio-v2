@@ -89,6 +89,18 @@ export default function About() {
                         </p>
                     </Content>
                 </UpperHeading>
+                <MoreContent>
+                    <p>
+                        More about this website? See&nbsp;
+                            <Link href="/projects/personal-portfolio-v2">
+                                <a>
+                                    <Highlight>
+                                        Building A Portfolio
+                                    </Highlight>
+                                </a>
+                            </Link>
+                    </p>
+                </MoreContent>
             </Wrapper>
         </PageLayout>
     )
@@ -112,6 +124,9 @@ const UpperHeading = styled.div`
             justify-content: center;
         `
     )};
+`;
+const MoreContent = styled.div`
+    text-align: center;
 `;
 const Content = styled.div`
     padding-right: 40px;

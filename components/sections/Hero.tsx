@@ -100,6 +100,7 @@ const Wrapper = styled.div`
             width: 100%;
             flex-direction: column;
             justify-content: center;
+            margin: auto;
             text-align: center;
             `
     )};
@@ -133,6 +134,7 @@ const CodeWrapper = styled.div`
         `
             display: flex;
             justify-content: center;
+            margin: auto;
             `
     )};
 `;

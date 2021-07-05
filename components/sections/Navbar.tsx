@@ -67,9 +67,16 @@ export function Navbar() {
                             </Link>
                         </Highlight>
                     </NavItem> 
-                    <Button>
-                        Resume
-                    </Button>
+                        <Button>
+                            <a
+                                href="/SharonHe_Resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ color: "white" }}
+                            >
+                                Resume
+                            </a>
+                        </Button>
             </NavItems>
             {!!isHidden && <BottomNavigation isHidden={isHidden} />}
         </SNavbar>
@@ -142,7 +149,7 @@ const Highlight = styled.span`
         :hover {
             display: block;
             background: linear-gradient(180deg, rgba(255, 255, 255, 0) 80%, rgba(170, 223, 237, 0.5) 20%);
-            transform: translate3d(0,5px,0);
+            transform: translate3d(0, 5px, 0);
             transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
         }
     `};
@@ -152,17 +159,6 @@ const BottomNavigation = styled.hr<INavItemsProps>`
         display: ${(props) => (props.isHidden ? "flex" : "none")};
         border: 2px solid black;
         width: 80%;
-    }
-`;
-const Icon = styled.svg`
-    height: 40px;
-    width: 40px;
-    margin-right: 3vw;
-    :hover {
-        cursor: pointer;
-        transform: translate3d(0, 5px, 0);
-        opacity: 0.7;
-        transition: all .2s cubic-bezier(.175, .885, .32, 1.275);
     }
 `;
 const NavbarIcon = styled.svg`
@@ -179,16 +175,6 @@ const NavbarIcon = styled.svg`
             :hover {
                 opacity: 0.8;
             }
-            `
-    )};
-`;
-const IconWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    ${media(
-        700,
-        `
-            margin-top: 10px;
             `
     )};
 `;

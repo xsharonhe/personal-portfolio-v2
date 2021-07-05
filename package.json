@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@styled-icons/bootstrap": "^10.34.0",
     "@styled-icons/boxicons-logos": "^10.34.0",
     "@styled-icons/evaicons-outline": "^10.34.0",
     "@styled-icons/ionicons-solid": "^10.34.0",

@@ -28,6 +28,9 @@ const Title = styled.h1`
     font-size: 68px;
     font-weight: 600;
     text-align: center;
+    display: block;
+    position: relative;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 90%, rgba(170, 223, 237, 0.5) 10%);
     ${({ theme }) => `
         font-family: ${theme.font.header};
     `};
@@ -43,7 +46,10 @@ const Title = styled.h1`
             font-size: 50px;
             `
     )};
-    display: block;
-    position: relative;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 90%, rgba(170, 223, 237, 0.5) 10%);
+        ${media(
+        601,
+        `
+            font-size: 32px;
+            `
+    )};
 `;

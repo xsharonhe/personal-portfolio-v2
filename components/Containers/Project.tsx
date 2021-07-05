@@ -40,7 +40,7 @@ export function Project ({
                         <Image
                             alt={title}
                             src={thumbnail}
-                            height={450}
+                            height={300}
                             width={350}
                         />
                     </ImageWrapper>
@@ -70,7 +70,7 @@ const Wrapper = styled.div`
     margin-bottom: 30px;
     ${({ theme }) => `
         :hover {
-            box-shadow: 12px 10px rgba(0,0,0, 0.5);
+            box-shadow: 12px 7px rgba(0,0,0, 0.5);
             transform: scale(1.03);
             transition: all ease 0.4s;
         }

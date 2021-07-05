@@ -1,7 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
 import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import { IProjectProps } from "../../components/Containers/Project";
 import { PageLayout } from "../../components/sections/PageLayout";
@@ -32,6 +32,7 @@ const ProjectsPage: React.FC<IProjectsPageProps> = ({
             </Head>
             <div>
                 <p>{frontMatter.title}</p>
+                <MDXRemote {...source} />
             </div>
         </PageLayout>
     );

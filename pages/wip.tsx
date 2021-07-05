@@ -1,10 +1,12 @@
 import { GetStaticProps } from "next";
 import Image from "next/image";
 import styled from "styled-components";
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import { PageLayout } from "../components/sections";
 import { media } from "../utils";
-import { getAllDates } from "../utils/wipUtils";
+import { getAllDates, getDate } from "../utils/wipUtils";
 
 interface IDateProps {
     slug: string;
@@ -15,37 +17,53 @@ interface IDateProps {
     content: string;
     icon: string;
 }
+
+type IDict = {
+    [key: string]: string
+}
+interface IMarkdownWipProps {
+    source: MDXRemoteSerializeResult;
+    frontMatter: IDict;
+}
 interface IWipProps {
-    data: IDateProps[];
+    all_dates: IDateProps[];
+    contents: IMarkdownWipProps[];
 }
 export default function wip({
-    data
+    all_dates,
+    contents
 }: IWipProps) {
+    console.log(contents);
     return (
         <PageLayout title="WIP">
             <Wrapper>
                 <ul>
-                    {data.map(wip => (
-                        <li key={wip.slug}>
-                            <Date>
-                                <IconWrapper>
-                                    <IconHolder>
-                                        <Image
-                                            src={wip.icon}
-                                            alt={`${wip.slug}__icon`}
-                                            width={60}
-                                            height={60}
-                                        />
-                                    </IconHolder>
-                                </IconWrapper>
-                                <Content>
-                                    <h2>{wip.title}</h2>
-                                    <span>{wip.date}</span>
-                                    <p>{wip.content}</p>
-                                </Content>
-                            </Date>
-                        </li>
-                    ))}
+                    {all_dates.map((wip, index) => {
+                        const source = contents[index].source;
+                        return (
+                            <li key={wip.slug}>
+                                <Date>
+                                    <IconWrapper>
+                                        <IconHolder>
+                                            <Image
+                                                src={wip.icon}
+                                                alt={`${wip.slug}__icon`}
+                                                width={60}
+                                                height={60}
+                                            />
+                                        </IconHolder>
+                                    </IconWrapper>
+                                    <Content>
+                                        <h2>{wip.title}</h2>
+                                        <span>{wip.date}</span>
+                                        <div>
+                                            <MDXRemote {...source} />
+                                        </div>
+                                    </Content>
+                                </Date>
+                            </li>
+                        )
+                    })}
                 </ul>
             </Wrapper>
         </PageLayout>
@@ -53,7 +71,7 @@ export default function wip({
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-    const data = getAllDates([
+    const all_dates = getAllDates([
         "slug",
         "title",
         "images",
@@ -63,7 +81,17 @@ export const getStaticProps: GetStaticProps = async () => {
         "content"
     ]);
 
-    return { props: { data } };
+    let contents: IMarkdownWipProps[] = [];
+    for (const item of all_dates) {
+        let { data, content } = getDate(item?.slug as string);
+        let mdxSource = await serialize(content, { scope: data });
+        contents.push({
+            source: mdxSource,
+            frontMatter: data
+        });
+    }
+
+    return { props: { all_dates, contents } };
 };
 
 const Content = styled.div`
@@ -105,9 +133,16 @@ const Content = styled.div`
         )}
     }
 
-    p {
+    div {
         font-size: 18px;
         color: #656270;
+        ${media(
+            "tablet",
+            `
+                text-align: justify;
+                padding-right: 15px;
+            `
+        )}
     }
 `;
 const IconHolder = styled.div`

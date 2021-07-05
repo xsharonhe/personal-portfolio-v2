@@ -2,6 +2,7 @@ import { GetStaticProps } from "next";
 import styled from "styled-components";
 import { PageLayout } from "../components/sections";
 import { IProjectProps, Project } from "../components/Containers/Project";
+import { SProject } from "../components/Containers";
 import { getAllProjects } from "../utils/projectsUtils";
 import { media } from "../utils";
 
@@ -54,6 +55,12 @@ const Wrapper = styled.div`
     width: 60%;
     margin: auto;
     padding: 0 20px 60px 20px;
+    ${media(
+        1000,
+        `
+            width: 70%;
+        `
+    )}
     ${media(
         "tablet",
         `

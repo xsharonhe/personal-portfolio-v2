@@ -17,6 +17,7 @@ export function Tag ({
 }
 
 const STag = styled.div`
+    color: black;
     font-size: 12px;
     padding: 5px 10px 3px 10px;
     ${({ theme }) => `

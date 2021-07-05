@@ -59,7 +59,7 @@ export const baseTheme: IBaseTemplate = {
         pink: "#ff79c6",
         purple: "#bd93f9",
         yellow: "f1f8ac",
-        grey: "#6D6E71",
+        grey: "#d3d3d3",
         green: "#B1CE99"
   }
 };

@@ -38,7 +38,7 @@ export function Project ({
                     <Section>
                     <ImageWrapper>
                         <Image
-                            alt="Mountains"
+                            alt={title}
                             src={thumbnail}
                             height={450}
                             width={350}
@@ -82,7 +82,7 @@ const Wrapper = styled.div`
         transition: all ease 0.4s;
     }
     ${media(
-        "tablet",
+        850,
         `
             height: auto; 
             p {
@@ -104,12 +104,17 @@ const Section = styled.div`
 const Content = styled.div`
     width: 60%;
     padding: 15px 25px 35px 35px;
+    background-color: black;
+    color: white;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
     ${media(
         "tablet",
         `
             width: 100%;
             text-align: center;
             padding: 0 0 30px 0;
+            border-top-right-radius: 0;
         `
     )}
 `;
@@ -137,7 +142,7 @@ const TagContainer = styled.div`
         `
             justify-content: center;
         `
-    )}
+    )};
 `;
 const STag = styled(Tag)`
     margin-right: 10px;
@@ -145,8 +150,14 @@ const STag = styled(Tag)`
 `;
 const ImageWrapper = styled.div`
     display: flex;
+    justify-content: center;
     border-radius: 8px 0 0 8px;
-    ${({ theme }) => `
-        background-color: ${theme.colors.green};
-    `};
+    background-color: ${props => props.theme.colors.green};
+    ${media(
+        "tablet",
+        `
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 8px;
+        `
+    )};
 `;

@@ -21,7 +21,6 @@ interface IWipProps {
 export default function wip({
     data
 }: IWipProps) {
-    console.log(data);
     return (
         <PageLayout title="WIP">
             <Wrapper>
@@ -107,7 +106,7 @@ const Content = styled.div`
     }
 
     p {
-        font-size: 20px;
+        font-size: 18px;
         color: #656270;
     }
 `;

@@ -11,7 +11,7 @@ export default function Home({ projects }: IProjectsProps) {
     <PageLayout>
       <Wrapper>
         <Hero />
-        <SubTitle>Showcase Projects</SubTitle>
+        <h1>Showcase Projects</h1>
         <ProjectsWrapper>
           {projects.map(project => (
               <Project 
@@ -53,20 +53,21 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Wrapper = styled.div`
   padding: 0 40px;
-`;
-const SubTitle = styled.h1`
-  font-size: 50px;
-  font-weight: 600;
-  text-align: center;
-  ${({ theme }) => `
-      font-family: ${theme.font.header};
-  `};
-  ${media(
-      "half_laptop",
-      `
-          font-size: 40px;
-          `
-  )};
+
+  h1 {
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+    ${({ theme }) => `
+        font-family: ${theme.font.header};
+    `};
+    ${media(
+        "half_laptop",
+        `
+            font-size: 40px;
+            `
+    )};
+  }
 `;
 const ProjectsWrapper = styled.div`
   width: 60%;

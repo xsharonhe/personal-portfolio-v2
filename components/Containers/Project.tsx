@@ -70,17 +70,15 @@ const Wrapper = styled.div`
     margin-bottom: 30px;
     ${({ theme }) => `
         :hover {
-            box-shadow: 8px 10px rgba(177, 206, 153, 0.5);
+            box-shadow: 12px 10px rgba(0,0,0, 0.5);
+            transform: scale(1.03);
+            transition: all ease 0.4s;
         }
         p {
             font-family: ${theme.font.body};
             font-size: 18px;
         }
     `}
-    :hover {
-        transform: scale(1.03);
-        transition: all ease 0.4s;
-    }
     ${media(
         850,
         `
@@ -152,7 +150,7 @@ const ImageWrapper = styled.div`
     display: flex;
     justify-content: center;
     border-radius: 8px 0 0 8px;
-    background-color: ${props => props.theme.colors.green};
+    background-color: rgba(177, 206, 153, 0.75);
     ${media(
         "tablet",
         `

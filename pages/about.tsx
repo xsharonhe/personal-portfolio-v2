@@ -91,7 +91,7 @@ export default function About() {
 
 const Wrapper = styled.div`
     font-size: 1.2rem;
-    padding-bottom: 60px;
+    padding-bottom: 80px;
 `;
 const UpperHeading = styled.div`
     padding: 0 40px;
@@ -120,8 +120,3 @@ const Content = styled.div`
         `
     )};
 `;
-interface ILinkProps {
-    href: string;
-    target?: string;
-}
-const SLink = styled.a<ILinkProps>``;

@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
@@ -13,7 +14,9 @@ interface IDateProps {
     title: string;
     images?: string[];
     date: string;
-    links?: string[];
+    link_caption?: string;
+    link?: string;
+    link_url?: string;
     content: string;
     icon: string;
 }
@@ -53,12 +56,22 @@ export default function wip({
                                             />
                                         </IconHolder>
                                     </IconWrapper>
-                                    <Content>
+                                    <Content id={wip.slug}>
                                         <h2>{wip.title}</h2>
                                         <span>{wip.date}</span>
                                         <div>
                                             <MDXRemote {...source} />
                                         </div>
+                                        {!!wip.link && (
+                                            <div>
+                                                <p>{wip.link_caption}</p>
+                                                <Link href={wip.link}>
+                                                    <a>
+                                                        {wip.link_url}
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        )}
                                     </Content>
                                 </Date>
                             </li>
@@ -76,7 +89,9 @@ export const getStaticProps: GetStaticProps = async () => {
         "title",
         "images",
         "date",
-        "links",
+        "link",
+        "link_caption",
+        "link_url",
         "icon",
         "content"
     ]);
@@ -104,6 +119,13 @@ const Content = styled.div`
     flex: 1;
     flex-basis: auto;
     -webkit-flex: 1;
+    ${media(
+        "tablet",
+        `
+            padding-right: 25px;
+            margin-left: -15px;
+        `
+    )}
 
     h2 {
         margin-top: .15em;
@@ -136,13 +158,30 @@ const Content = styled.div`
     div {
         font-size: 18px;
         color: #656270;
+        line-height: 1.4;
         ${media(
             "tablet",
             `
                 text-align: justify;
-                padding-right: 15px;
             `
         )}
+
+        a {
+            color: #656270;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 80%, rgba(170, 223, 237, 0.5) 20%);
+            :hover {
+                color: ${props => props.theme.colors.primary};
+                cursor: pointer;
+                transition: all .2s ease-in-out;
+            }
+        }
+
+        ol {
+            li {
+                padding: 0;
+                margin: 10px;
+            }
+        }
     }
 `;
 const IconHolder = styled.div`

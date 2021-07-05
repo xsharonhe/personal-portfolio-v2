@@ -82,6 +82,11 @@ export default function About() {
                             </Link>
                             {" from scratch."}
                         </p>
+                        <p>
+                            Fun fact: I was so fascinated by flat character designs
+                            when I was picking up code that I taught myself Illustrator! That&apos;s where a lot of 
+                            the designs on this website are from. Time to learn photoshop now.
+                        </p>
                     </Content>
                 </UpperHeading>
             </Wrapper>

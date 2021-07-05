@@ -45,5 +45,5 @@ const Title = styled.h1`
     )};
     display: block;
     position: relative;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 90%, rgba(170, 223, 237, 0.5) 10%)
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 90%, rgba(170, 223, 237, 0.5) 10%);
 `;

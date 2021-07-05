@@ -2,7 +2,6 @@ import { GetStaticProps } from "next";
 import styled from "styled-components";
 import { PageLayout } from "../components/sections";
 import { IProjectProps, Project } from "../components/Containers/Project";
-import { SProject } from "../components/Containers";
 import { getAllProjects } from "../utils/projectsUtils";
 import { media } from "../utils";
 

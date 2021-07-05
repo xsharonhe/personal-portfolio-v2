@@ -1,7 +1,6 @@
 import { GetStaticProps } from "next";
 import Image from "next/image";
 import styled from "styled-components";
-import { CalendarDateFill } from "@styled-icons/bootstrap/CalendarDateFill";
 
 import { PageLayout } from "../components/sections";
 import { media } from "../utils";
@@ -35,8 +34,8 @@ export default function wip({
                                         <Image
                                             src={wip.icon}
                                             alt={`${wip.slug}__icon`}
-                                            width={70}
-                                            height={70}
+                                            width={60}
+                                            height={60}
                                         />
                                     </IconHolder>
                                 </IconWrapper>
@@ -83,8 +82,33 @@ const Content = styled.div`
         margin-top: .15em;
         font-size: 34px;
         line-height: 120%;
-        color: #232320;
+        color: black;
         letter-spacing: -1px;
+        ${media(
+            "tablet",
+            `
+                font-size: 24px;
+            `
+        )}
+    }
+
+    span {
+        margin-top: -20px;
+        font-size: 16px;
+        ${({ theme }) => `
+            color: #AAAAAA;
+        `}
+        ${media(
+            "tablet",
+            `
+                margin-top: -5px;
+            `
+        )}
+    }
+
+    p {
+        font-size: 20px;
+        color: #656270;
     }
 `;
 const IconHolder = styled.div`
@@ -101,13 +125,12 @@ const IconWrapper = styled.div`
     
     ::before {
         content: "";
-        width: 2px;
+        width: 3px;
         height: 100%;
         z-index: 1;
         position: absolute;
         left: 40%;
         top: 0;
-        bottom: -20px;
         transform: translate3d(-50%, 0, 0);
         background-color: black;
     }
@@ -133,19 +156,18 @@ const Wrapper = styled.div`
 
         li {
             padding: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 100px;
 
             ${media(
                 "tablet",
                 `
-                    width: 50%;
-                    margin-bottom: 50px;
-                    position: relative;
+                    padding: 5px;
+                    margin-bottom: 60px;
                 `
             )}
 
             p {
-                line-height: 1.5;
+                line-height: 1.25;
             }
             
             :last-child {
@@ -153,4 +175,11 @@ const Wrapper = styled.div`
             }
         }
     }
+    ${media(
+        "tablet",
+        `
+            width: 100%;
+            max-width: none;
+        `
+    )}
 `;

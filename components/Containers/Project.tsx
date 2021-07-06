@@ -16,6 +16,7 @@ export interface IProjectProps {
     links: string[];
     captions: string[];
     achievements?: string;
+    label: string;
 };
 
 export function Project ({ 
@@ -29,7 +30,8 @@ export function Project ({
     images = [],
     links = [],
     captions = [],
-    achievements = ""
+    achievements = "",
+    label
 }: IProjectProps) {
     return (
         <Wrapper>

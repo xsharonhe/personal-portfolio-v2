@@ -37,7 +37,7 @@ export default function wip({
     contents
 }: IWipProps) {
     return (
-        <PageLayout title="WIP">
+        <PageLayout title="Work In Progress">
             <Wrapper>
                 <ul>
                     {all_dates.map((wip, index) => {

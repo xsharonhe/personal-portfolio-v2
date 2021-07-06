@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
 import styled from "styled-components";
@@ -12,14 +13,107 @@ import { media } from "../../utils";
 
 interface IProjectsPageProps {
     source: MDXRemoteSerializeResult;
-    frontMatter: Omit<IProjectProps, 'slug'>;
+    frontMatter: Omit<IProjectProps, "slug">;
+}
+
+const getShowcaseComponent = (frontMatter: Omit<IProjectProps, "slug">,) => {
+    switch(frontMatter.label) {
+        case "devpost":
+            return (
+                <>
+                    <div>
+                        <h4>github repo:</h4>
+                        <a href={`${frontMatter.links[0]}`} target="_blank" rel="noopener noreferrer">
+                            {frontMatter.captions[0]}
+                        </a>
+                    </div>
+                    <div>
+                        <h4>devpost:</h4>
+                        <a href={`${frontMatter.links[1]}`} target="_blank" rel="noopener noreferrer">
+                            {frontMatter.captions[1]}
+                        </a>
+                    </div>
+                </>
+            );
+        case "pump":
+            return (
+                <>
+                    <div>
+                        <h4>github repo:</h4>
+                        <a href={`${frontMatter.links[0]}`} target="_blank" rel="noopener noreferrer">
+                            {frontMatter.captions[0]}
+                        </a>
+                    </div>
+                    <div>
+                        <h4>ui library:</h4>
+                        <a href={`${frontMatter.links[0]}`} target="_blank" rel="noopener noreferrer">
+                            {frontMatter.captions[1]}
+                        </a>
+                    </div>
+                </>
+            );
+        case "default":
+            return (
+                <>
+                    <div>
+                        <h4>www:</h4>
+                        <a href={`${frontMatter.links[0]}`} target="_blank" rel="noopener noreferrer">
+                            {frontMatter.captions[0]}
+                        </a>
+                    </div>
+                    <div>
+                        <h4>github repo:</h4>
+                        <a href={`${frontMatter.links[1]}`} target="_blank" rel="noopener noreferrer">
+                            {frontMatter.captions[1]}
+                        </a>
+                    </div>
+                </>
+            )
+        case "youtube":
+            return (
+                <>
+                    <div>
+                        <h4>github repo:</h4>
+                        <a href={`${frontMatter.links[0]}`} target="_blank" rel="noopener noreferrer">
+                            {frontMatter.captions[0]}
+                        </a>
+                    </div>
+                    <div>
+                        <h4>youtube demo:</h4>
+                        <a href={`${frontMatter.links[1]}`} target="_blank" rel="noopener noreferrer">
+                            {frontMatter.captions[1]}
+                        </a>
+                    </div>
+                </>
+            )
+        case "docs":
+            return (
+                <>
+                    <div>
+                        <h4>github repo:</h4>
+                        <a href={`${frontMatter.links[0]}`} target="_blank" rel="noopener noreferrer">
+                            {frontMatter.captions[0]}
+                        </a>
+                    </div>
+                    <div>
+                        <h4>report to McKinsey & Co.:</h4>
+                        <a href={`${frontMatter.links[1]}`} target="_blank" rel="noopener noreferrer">
+                            {frontMatter.captions[1]}
+                        </a>
+                    </div>
+                </>
+            )
+        default:
+            return (
+                <></>
+            )
+    }
 }
 
 const ProjectsPage: React.FC<IProjectsPageProps> = ({   
     source,
     frontMatter
 }) => {
-    console.log(frontMatter);
     return (
         <PageLayout title={frontMatter.title}>
              <Head>
@@ -41,22 +135,7 @@ const ProjectsPage: React.FC<IProjectsPageProps> = ({
                     </div>
                 )}
                 <Showcase>
-                    {frontMatter.links.length == 2 && (
-                        <>
-                            <div>
-                                <h4>www:</h4>
-                                <a href={`${frontMatter.links[0]}`} target="_blank" rel="noopener noreferrer">
-                                    {frontMatter.captions[0]}
-                                </a>
-                            </div>
-                            <div>
-                                <h4>github repo:</h4>
-                                <a href={`${frontMatter.links[1]}`} target="_blank" rel="noopener noreferrer">
-                                    {frontMatter.captions[1]}
-                                </a>
-                            </div>
-                        </>
-                    )}
+                    {getShowcaseComponent(frontMatter)}
                 </Showcase>
                 <br />
                 <h3 style={{ fontWeight: 600 }}>The Process</h3>

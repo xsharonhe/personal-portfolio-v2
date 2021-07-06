@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
@@ -50,7 +49,6 @@ const getCodeSnippet = () => {
 }
 
 export function Hero() {
-    const memoizedCodeSnippet = useCallback(getCodeSnippet, []);
     return (
         <Wrapper>
             <Section>
@@ -63,7 +61,7 @@ export function Hero() {
                 <CodeWrapper>
                     <CodeBlock 
                         lineNumbers={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
-                        codeSnippet={memoizedCodeSnippet()}
+                        codeSnippet={getCodeSnippet()}
                     />
                 </CodeWrapper>
                 <br />

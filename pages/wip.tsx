@@ -36,7 +36,6 @@ export default function wip({
     all_dates,
     contents
 }: IWipProps) {
-    console.log(contents);
     return (
         <PageLayout title="WIP">
             <Wrapper>

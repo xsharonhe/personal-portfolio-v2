@@ -1,6 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
 import styled from "styled-components";
+import { TerminalFill } from "@styled-icons/bootstrap/TerminalFill";
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
@@ -18,6 +19,7 @@ const ProjectsPage: React.FC<IProjectsPageProps> = ({
     source,
     frontMatter
 }) => {
+    console.log(frontMatter);
     return (
         <PageLayout title={frontMatter.title}>
              <Head>
@@ -33,9 +35,34 @@ const ProjectsPage: React.FC<IProjectsPageProps> = ({
                 />
             </Head>
             <Wrapper>
-                <div>
+                {frontMatter.links.length > 0 && (
+                    <div>
+                        <Icon as={TerminalFill} />
+                    </div>
+                )}
+                <Showcase>
+                    {frontMatter.links.length == 2 && (
+                        <>
+                            <div>
+                                <h4>www:</h4>
+                                <a href={`${frontMatter.links[0]}`} target="_blank" rel="noopener noreferrer">
+                                    {frontMatter.captions[0]}
+                                </a>
+                            </div>
+                            <div>
+                                <h4>github repo:</h4>
+                                <a href={`${frontMatter.links[1]}`} target="_blank" rel="noopener noreferrer">
+                                    {frontMatter.captions[1]}
+                                </a>
+                            </div>
+                        </>
+                    )}
+                </Showcase>
+                <br />
+                <h3 style={{ fontWeight: 600 }}>The Process</h3>
+                <MDXWrapper>
                     <MDXRemote {...source} />
-                </div>
+                </MDXWrapper>
             </Wrapper>
         </PageLayout>
     );
@@ -45,91 +72,173 @@ export default ProjectsPage;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const { data, content } = getProject(params?.slug as string);
-  
+
     const mdxSource = await serialize(content, { scope: data });
-  
+
     return {
         props: {
             source: mdxSource,
             frontMatter: data,
         },
     };
-  };
+};
   
-  export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
     const projects = getAllProjects(["slug"]);
-  
+
     const paths = projects.map((project) => ({
         params: {
             slug: project.slug,
         },
     }));
-  
+
     return {
         paths,
         fallback: false,
     };
-  };
+};
 
-  const Wrapper = styled.div`
+const Icon = styled.svg`
+    width: 40px;
+    height: 40px;
+`;
+const Wrapper = styled.div`
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 80%;
     max-width: 740px;
     height: auto;
     margin: 0 auto;
-    position: relative;
     align-content: center;
     padding-bottom: 60px;
 
     ${media(
         "tablet",
         `
-            width: 80%;
+            width: 100%;
             max-width: none;
+            padding-top: 20px;
+            margin: auto;
         `
     )};
+`;
+const Showcase = styled.div`
+    padding-bottom: 40px;
+    ${media(
+        "tablet",
+        `
+            margin: auto;
+            text-align: center;
+            width: 100%;
+        `
+    )};
+
     div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: -35px;
+        ${media(
+            "tablet",
+            `
+                padding: 0 20%;
+                flex-direction: column;
+                margin-bottom: 0;
+            `
+        )};
+    }
+
+    h4 {
         font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+        margin-right: 10px;
+        ${({ theme }) => `
+            font-family: ${theme.font.header};
+        `};
+        ${media(
+            "tablet",
+            `
+                font-size: 16px;
+                margin-bottom: -2px;
+                `
+        )};
+    }
+
+
+    a {
+        font-size: 16px;
+        margin-top: 8px;
         color: #656270;
-        line-height: 1.4;
-
-        a {
-            color: #656270;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 80%, rgba(170, 223, 237, 0.5) 20%);
-            :hover {
-                color: ${props => props.theme.colors.primary};
-                cursor: pointer;
-                transition: all .2s ease-in-out;
-            }
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 80%, rgba(170, 223, 237, 0.5) 20%);
+        :hover {
+            color: ${props => props.theme.colors.primary};
+            cursor: pointer;
+            transition: all .2s ease-in-out;
         }
+        ${media(
+            "mobile",
+            `
+                font-size: 12px;
+            `
+        )};
+    }
+`;
+const MDXWrapper = styled.div`
+    font-size: 18px;
+    color: #656270;
+    line-height: 1.4;
+    text-align: justify;
 
-        ol {
-            li {
-                padding: 0;
-                margin: 10px;
-            }
-        }
+    ${media(
+        "tablet",
+        `
+            padding: 0 25px;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+        `
+    )};
 
-        img {
-            ${media(
-                "mobile",
-                `
-                    width: 300px;
-                `
-            )};
-            ${media(
-                350,
-                `
-                    width: 250px;
-                `
-            )};
-        }
+    code {
+        font-family: ${props => props.theme.font.code};
+        margin: 0 2px;
+        font-size: 14px;
+        background-color: ${props => props.theme.colors.grey};
+        border-radius: 4px;
+        padding: 2px 8px;
+    }
 
-        figcaption {
-            font-style: italic;
-            font-size: 15px;
+    a {
+        color: #656270;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 80%, rgba(170, 223, 237, 0.5) 20%);
+        :hover {
+            color: ${props => props.theme.colors.primary};
+            cursor: pointer;
+            transition: all .2s ease-in-out;
         }
+    }
+
+    ol {
+        li {
+            padding: 0;
+            margin: 10px;
+        }
+    }
+
+    img {
+        ${media(
+            "tablet",
+            `
+                width: 100%;
+            `
+        )};
+    }
+
+    figcaption {
+        font-style: italic;
+        font-size: 15px;
     }
 `;

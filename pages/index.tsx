@@ -40,7 +40,6 @@ export default function Home({ projects }: IProjectsProps) {
                 tags={project.tags}
                 images={project.images}
                 links={project.links}
-                showcase={project.showcase}
                 achievements={project.achievements}
             />
           ))}
@@ -140,6 +139,22 @@ const ConnectWrapper = styled.div`
 `;
 const IconsWrapper = styled.div`
     text-align: center;
+
+    a {
+      ${({ theme }) => `
+        :hover {
+            color: ${theme.colors.primary};
+            transition: all 0.8s ease;
+        }
+        ${media(
+          "mobile",
+          `
+            margin: 10px 0;
+          `
+        )};
+    `};
+    }
+
     ${({ theme }) => `
         ${media(
           "mobile",
@@ -156,19 +171,6 @@ const SIcon = styled.svg`
     width: 60px;
     margin: 0 20px;
     display: inline-block;
-    ${({ theme }) => `
-        :focus
-        :hover {
-            fill: ${theme.colors.primary};
-            opacity: 0.75;
-        }
-        ${media(
-          "mobile",
-          `
-            margin: 10px 0;
-          `
-        )};
-    `};
 `;
 const ResumeWrapper = styled.div`
     padding-top: 40px;

@@ -13,8 +13,8 @@ export interface IProjectProps {
     description: string;
     tags: string[];
     images?: string[];
-    links?: string[];
-    showcase?: string[];
+    links: string[];
+    captions: string[];
     achievements?: string;
 };
 
@@ -28,7 +28,7 @@ export function Project ({
     tags,
     images = [],
     links = [],
-    showcase = [],
+    captions = [],
     achievements = ""
 }: IProjectProps) {
     return (

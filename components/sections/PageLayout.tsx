@@ -88,4 +88,10 @@ const Title = styled.h1`
             font-size: 32px;
             `
     )};
+    ${media(
+        "mobile",
+        `
+            font-size: 28px;
+        `
+    )};
 `;

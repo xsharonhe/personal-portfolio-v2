@@ -24,7 +24,7 @@ export default function Projects({ projects }: IProjectsProps) {
                         tags={project.tags}
                         images={project.images}
                         links={project.links}
-                        showcase={project.showcase}
+                        captions={project.captions}
                         achievements={project.achievements}
                     />
                 ))}
@@ -43,6 +43,7 @@ export const getStaticProps: GetStaticProps = async () => {
         "tags",
         "images",
         "links",
+        "captions",
         "priority",
         "achievements"
     ]);

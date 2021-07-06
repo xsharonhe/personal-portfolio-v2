@@ -119,6 +119,7 @@ const SubHeadline = styled.p`
 const Section = styled.div`
     width: 60%;
     margin-top: 20px;
+    padding-left: 40px;
     ${media(
         "half_laptop",
         `

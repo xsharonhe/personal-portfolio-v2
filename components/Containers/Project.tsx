@@ -62,7 +62,7 @@ export function Project ({
                 </a>
             </Link>
         </Wrapper>
-)
+    )
 }
 
 const Wrapper = styled.div`
@@ -121,10 +121,16 @@ const Content = styled.div`
 const SubContent = styled.p`
     ${({ theme }) => ` 
         color: ${theme.colors.grey};
-        font-family: ${theme.font.header};
+        font-family: ${theme.font.body};
         font-size: 12px;
         margin-bottom: -10px;
     `};
+    ${media(
+        850,
+        `
+           padding: 0 20px;
+        `
+    )}
 `;
 const Title = styled.h3`
     font-weight: 500;

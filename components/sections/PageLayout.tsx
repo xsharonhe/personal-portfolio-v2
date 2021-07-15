@@ -61,7 +61,7 @@ const Wrapper = styled.div`
     justify-content: center;
 `;
 const Title = styled.h1`
-    font-size: 60px;
+    font-size: 68px;
     font-weight: 600;
     text-align: center;
     display: block;
@@ -73,25 +73,25 @@ const Title = styled.h1`
     ${media(
         "half_laptop",
         `
-            font-size: 50px;
+            font-size: 56px;
             `
     )};
     ${media(
         "tablet",
         `
-            font-size: 30px;
+            font-size: 45px;
             `
     )};
     ${media(
         601,
         `
-            font-size: 30px;
+            font-size: 36px;
             `
     )};
     ${media(
         500,
         `
-            font-size: 20px;
+            font-size: 28px;
         `
     )};
 `;

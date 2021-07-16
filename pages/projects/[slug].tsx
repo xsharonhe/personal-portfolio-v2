@@ -116,18 +116,6 @@ const ProjectsPage: React.FC<IProjectsPageProps> = ({
 }) => {
     return (
         <PageLayout title={frontMatter.title}>
-             <Head>
-                <meta
-                    name="description"
-                    content={frontMatter.description}
-                    key="description"
-                />
-                <meta
-                    property="og:description"
-                    content={frontMatter.description}
-                    key="ogDescription"
-                />
-            </Head>
             <Wrapper>
                 {frontMatter.links.length > 0 && (
                     <div>

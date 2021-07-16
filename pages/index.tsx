@@ -41,6 +41,8 @@ export default function Home({ projects }: IProjectsProps) {
                 images={project.images}
                 links={project.links}
                 achievements={project.achievements}
+                captions={project.captions}
+                label={project.label}
             />
           ))}
         </ProjectsWrapper>

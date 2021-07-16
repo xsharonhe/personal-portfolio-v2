@@ -18,7 +18,24 @@ function MyApp({ Component, pageProps }: AppProps) {
     <React.Fragment>
       <Head>
         <title>Sharon He</title>
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="title" content="Sharon He" />
+        <meta
+          name="description"
+          content="Sharon He is a 19 y/o developer from Toronto, Canada who is passionate about data, infrastructure, and economics."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sharonhe.me" />
+        <meta property="og:title" content="Sharon He" />
+        <meta
+          property="og:description"
+          content="Sharon He is a 19 y/o developer from Toronto, Canada who is passionate about data, infrastructure, and economics."
+        />
+        <meta
+          property="og:image"
+          content="https://sharonhe.me/meta.png"
+        />
         <link 
           rel="apple-touch-icon" 
           sizes="180x180" 
@@ -44,11 +61,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link 
           rel="mask-icon" 
           href="/safari-pinned-tab.svg" 
-          color="#5bbad5"
+          color="#f7faff"
         />
         <meta 
           name="msapplication-TileColor" 
-          content="#2b5797"
+          content="#f7faff"
         />
         <meta 
           name="theme-color" 

@@ -12,7 +12,65 @@ links: ["https://github.com/PuMProfessionals", "https://www.chromatic.com/librar
 captions: ["PuMProfessionals", "chromatic ui library"]
 label: pump
 ---
-Hello, there!
+<div>
+To learn a bit more about the background of this experience and what I learned thus far, 
+please see my WIP page on this project <a href="/wip/#pump-in-progress">here</a>.
 
-## Can you
-**see**
+Redesigning an entire website is a tough process. I can't emphasize that enough. In this blurb,
+I discuss more behind my design decisions and what I particularly like about each technology we used.
+For a comparison of the before and after designs of our website:
+
+<div align="center">
+    <figure>
+        <img src="/projects/pump-redesign/old.png" alt="How the old website looked like" width="500"/>
+        <figcaption>Old website</figcaption>
+    </figure>
+</div>
+
+<div align="center">
+    <figure>
+        <img src="/projects/pump-redesign/showcase.png" alt="Home page" width="500"/>
+        <figcaption>Home page Figma design</figcaption>
+    </figure>
+</div>
+
+I think deciding the tech stack and the software design cycle for this project was slightly challenging 
+because I wanted the technologies to be easy enough that a group of elementary and high school 
+students could learn how to build a website in a couple of months, but strict enough that
+they could get a general idea of what good coding practices are.
+
+I decided to use a <code>JavaScript</code> frontend
+and backend, so that they only had to learn one language to understand the entire codebase.
+Additionally, I decided on <code>Next.js</code> because they provided a lot of powerful features where
+I thought the students could learn more about the concepts and less about the implementation details that could
+already be provided such as code-splitting, file-system routing, and image optimization. I chose
+this framework over <code>Gatsby</code> (which offers a lot of similar features) because <code>Next.js</code> supports
+both static and server-side generation. We needed a database for the medical opportunities my organization would
+be posting for students.
+
+<div align="center">
+    <figure>
+        <img src="/projects/pump-redesign/trello.png" alt="Trello board" width="500"/>
+        <figcaption>Dividing tasks using Trello</figcaption>
+    </figure>
+</div>
+
+Before building the actual website, however, I wanted them to focus on component-driven methodology and 
+less on the functionality on the website at first. Partially, because it was easier to focus on one aspect of coding
+at a time, but also because modularity is important because we want to code the possible as efficiently as possible.
+If a certain layout is used multiple times across the website, we want to code it once, not multiple times.
+For this reason, I used <code>Storybook</code> to give the students and isolated environment for them to learn how
+to just build UI and focus on its reusability. After the students are comfortable enough with the UI, I can then assign
+them tickets to have them build their components in the overarching website repository, where they would also focus
+on the functionality (i.e. functionality, backend design).
+
+My two favourite functionalities of the technologies we used were:
+* <code>Next.js</code>'s markdown functionalities which allows for scalability and reduces the need for a 
+large database. I loved this functionality because I could just write the blog posts and job opportunities 
+using <code>Markdown</code>. This made it very easy for non-technical people to write their blog posts and would
+reduce the time for us to transfer the blog posts from our writing team to the website.
+* <code>styled-components</code> to simplify the process of CSS. At first, I really hated using it, but over
+time I grew to love it. No <code>CSS</code> files, and no custom naming and duplicating class names. I now always
+build all my React projects with it.
+
+</div>

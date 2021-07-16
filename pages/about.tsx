@@ -52,16 +52,7 @@ export default function About() {
                                     building data intensive applications
                                 </Highlight>
                             </a>
-                            {", and "}
-                            <a
-                                href="https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/" 
-                                target="_blank" 
-                                rel="noopener noreferrer">
-                                <Highlight>
-                                    linear algebra
-                                </Highlight>
-                            </a>
-                            {". "} 
+                            {", and financial markets. "}
                             {"In my free time, I help teach elementary and high school students how to code as "}
                             {"the Head of Tech at "}
                             <a
@@ -73,7 +64,7 @@ export default function About() {
                                 </Highlight>
                             </a>
                             {". I am leading the engineering process of "}
-                            <Link href="/projects/pump-redesign">
+                            <Link href="/wip/#pump-in-progress">
                                 <a>
                                     <Highlight>
                                         redesigning their website

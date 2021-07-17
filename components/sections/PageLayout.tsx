@@ -59,6 +59,12 @@ const Copyright = styled.div`
 const Wrapper = styled.div`
     display: flex;
     justify-content: center;
+    ${media(
+        700,
+        `
+            margin-top: 30px;
+            `
+    )};
 `;
 const Title = styled.h1`
     font-size: 68px;

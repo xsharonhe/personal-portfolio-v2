@@ -3,11 +3,10 @@ import { media } from "../utils/media";
 
 export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
     @font-face {
-        font-family: 'Calibre';
-        src: local('Calibre Regular'), local('Calibre-Regular'),
-            url('../public/fonts/Calibre-Regular.woff2') format('woff2'),
-            url('../public/fonts/Calibre-Regular.woff') format('woff'),
-            url('../public/fonts/Calibre-Regular.ttf') format('truetype');
+        font-family: 'Calibre-Regular';
+        src: url('../public/fonts/Calibre-Regular.woff2') format('woff2'),
+             url('../public/fonts/Calibre-Regular.woff') format('woff'),
+             url('../public/fonts/Calibre-Regular.ttf') format('truetype');
         font-weight: 500;
         font-style: normal;
         font-display: swap;
@@ -44,7 +43,9 @@ export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
             color: black;
         }
         @media only screen and (max-width: 864px) {
-            font-size: 18px;
+            body {
+                font-size: 18px;
+            }
         }
         @media only screen and (max-width: 600px) {
             body {

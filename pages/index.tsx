@@ -101,7 +101,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Wrapper = styled.div`
   padding: 0 40px 60px 0;
-
   ${media(
         "tablet",
         `

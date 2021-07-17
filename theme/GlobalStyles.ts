@@ -1,17 +1,15 @@
 import { createGlobalStyle, DefaultTheme } from 'styled-components';
-import { media } from "../utils/media";
 
 export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
     @font-face {
-        font-family: 'Calibre-Regular';
-        src: url('../public/fonts/Calibre-Regular.woff2') format('woff2'),
-             url('../public/fonts/Calibre-Regular.woff') format('woff'),
-             url('../public/fonts/Calibre-Regular.ttf') format('truetype');
-        font-weight: 500;
+        font-family: 'Calibre';
+        src: local('Calibre Regular'), local('Calibre-Regular'),
+            url('Calibre-Regular.woff2') format('woff2'),
+            url('Calibre-Regular.woff') format('woff'),
+            url('Calibre-Regular.ttf') format('truetype');
+        font-weight: 400;
         font-style: normal;
-        font-display: swap;
     }
-
     ${({ theme }) => `
         *,
         *::before,

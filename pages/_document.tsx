@@ -50,8 +50,8 @@ class MyDocument extends Document<IMyDocumentProps> {
                         crossorigin
                     />
                     <link 
-                        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" 
-                        rel="stylesheet"
+                      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500&display=swap" 
+                      rel="stylesheet"
                     />
                 </Head>
                 <body>

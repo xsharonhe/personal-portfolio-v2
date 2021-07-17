@@ -24,7 +24,7 @@ interface IBaseTemplate {
 export const baseTheme: IBaseTemplate = {
   font: {
       header: "'General Sans', sans-serif",
-      body: "'Calibre-Regular', sans-serif",
+      body: "'Calibre','Inter',-apple-system, system-ui, sans-serif",
       code: "'Fira Code', sans-serif"
   },
   size: {

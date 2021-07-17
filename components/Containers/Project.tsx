@@ -125,6 +125,9 @@ const Content = styled.div`
             border-top-right-radius: 0;
         `
     )}
+    @media only screen and (min-width: 1700px) {
+        width: 100%;
+    }
 `;
 const SubContent = styled.p`
     ${({ theme }) => ` 

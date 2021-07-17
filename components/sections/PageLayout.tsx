@@ -62,7 +62,7 @@ const Wrapper = styled.div`
     ${media(
         700,
         `
-            margin-top: 30px;
+            margin-top: 40px;
             `
     )};
 `;

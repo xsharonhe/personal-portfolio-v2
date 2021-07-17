@@ -248,7 +248,7 @@ const Showcase = styled.div`
         ${media(
             "mobile",
             `
-                font-size: 12px;
+                font-size: 16px;
             `
         )};
     }

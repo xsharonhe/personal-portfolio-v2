@@ -121,9 +121,10 @@ const Section = styled.div`
     ${media(
         "half_laptop",
         `
-            width: 100%;
+            width: 90%;
             margin-bottom: -60px;
             margin-top: 0;
+            padding-left: 20px;
             `
     )};
 `;

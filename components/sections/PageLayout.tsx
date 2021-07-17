@@ -79,7 +79,7 @@ const Title = styled.h1`
     ${media(
         "tablet",
         `
-            font-size: 45px;
+            font-size: 44px;
             `
     )};
     ${media(

@@ -102,6 +102,14 @@ export const getStaticProps: GetStaticProps = async () => {
 const Wrapper = styled.div`
   padding: 0 40px 60px 0;
 
+  ${media(
+        "tablet",
+        `
+            margin: auto;
+            padding: 0 10px 60px 10px;
+            `
+    )};
+
   h1, h2 {
     font-size: 50px;
     font-weight: 600;
@@ -148,25 +156,21 @@ const IconsWrapper = styled.div`
             color: ${theme.colors.primary};
             transition: all 0.8s ease;
         }
-        ${media(
-          "mobile",
-          `
-            margin: 10px 0;
-          `
-        )};
     `};
     }
 
-    ${({ theme }) => `
-        ${media(
-          "mobile",
-          `
+    ${media(
+        "mobile",
+        `
             display: flex;
             flex-direction: column;
-            align-items: center;
-          `
-        )};
-    `};
+            justify-content: center;
+
+            a {
+              margin: 10px 0;
+            }
+            `
+      )}; 
 `;
 const SIcon = styled.svg`
     height: 60px;

@@ -158,12 +158,6 @@ const Content = styled.div`
         font-size: 18px;
         color: #656270;
         line-height: 1.4;
-        ${media(
-            "tablet",
-            `
-                text-align: justify;
-            `
-        )}
 
         a {
             color: #656270;

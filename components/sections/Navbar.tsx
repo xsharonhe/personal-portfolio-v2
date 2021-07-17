@@ -157,7 +157,7 @@ const Highlight = styled.span`
 const BottomNavigation = styled.hr<INavItemsProps>`
     @media only screen and (max-width: 700px) {
         display: ${(props) => (props.isHidden ? "flex" : "none")};
-        border: 2px solid black;
+        border-bottom: 3px solid black;
         width: 80%;
     }
 `;

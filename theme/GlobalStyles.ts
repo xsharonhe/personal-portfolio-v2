@@ -1,4 +1,5 @@
 import { createGlobalStyle, DefaultTheme } from 'styled-components';
+import { media } from "../utils/media";
 
 export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
     @font-face {
@@ -32,7 +33,7 @@ export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
             padding: 20px 0;
         }
         a {
-            text-decoration: none;
+            text-decoration: none!important;
             color: black;
         }
         ul {
@@ -41,6 +42,14 @@ export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
         }
         span {
             color: black;
+        }
+        @media only screen and (max-width: 864px) {
+            font-size: 18px;
+        }
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 16px;
+            }
         }
     `};
 `;

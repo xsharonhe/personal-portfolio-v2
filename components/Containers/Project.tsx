@@ -90,6 +90,14 @@ const Wrapper = styled.div`
             }
         `
     )}
+    ${media(
+        600,
+        `
+            p {
+                font-size: 16px;
+            }
+        `
+    )};
 `;
 const Section = styled.div`
     display: flex;
@@ -136,6 +144,12 @@ const Title = styled.h3`
     font-weight: 500;
     font-size: 28px;
     font-weight: bold;
+    ${media(
+        600,
+        `
+            font-size: 24px;
+        `
+    )};
 `;
 const TagContainer = styled.div`
     flex-direction: row;

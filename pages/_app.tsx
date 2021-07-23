@@ -57,7 +57,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="manifest" 
           href="/site.webmanifest"
         />
-        <link rel="shortcut icon" href="/favicon.ico?v=1" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <link 
           rel="mask-icon" 
           href="/safari-pinned-tab.svg" 

@@ -156,6 +156,13 @@ const Content = styled.div`
 
     div {
         font-size: 20px;
+
+        ${media(
+        600,
+        `
+            font-size: 16px;
+        `
+        )};
         color: #656270;
         line-height: 1.4;
 
@@ -202,13 +209,13 @@ const IconWrapper = styled.div`
     }
 
     ${media(
-        "tablet",
+        600,
         `
             ::before {
                 display: none;
             }
         `
-    )}
+    )};
 `;
 const Date = styled.div`
     display: flex;
@@ -216,7 +223,7 @@ const Date = styled.div`
     box-sizing: border-box;
     justify-content: space-between;
     ${media(
-        "tablet",
+        600,
         `
             flex-direction: column;
         `

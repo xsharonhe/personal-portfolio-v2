@@ -37,7 +37,7 @@ const SButton = styled.button<IButtonProps>`
         font-family: ${theme.font.body};
         text-decoration: none;
         cursor: pointer;
-        padding: 0.8rem 1.75rem 0.6rem 1.75rem;
+        padding: 1rem 1.75rem 0.6rem 1.75rem;
         display: flex;
         align-items: center;
         text-align: center;

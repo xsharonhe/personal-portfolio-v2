@@ -155,7 +155,7 @@ const Content = styled.div`
     }
 
     div {
-        font-size: 18px;
+        font-size: 20px;
         color: #656270;
         line-height: 1.4;
 
@@ -200,12 +200,27 @@ const IconWrapper = styled.div`
         transform: translate3d(-50%, 0, 0);
         background-color: black;
     }
+
+    ${media(
+        "tablet",
+        `
+            ::before {
+                display: none;
+            }
+        `
+    )}
 `;
 const Date = styled.div`
     display: flex;
     align-items: stretch!important;
     box-sizing: border-box;
     justify-content: space-between;
+    ${media(
+        "tablet",
+        `
+            flex-direction: column;
+        `
+    )}
 `;
 const Wrapper = styled.div`
     display: flex;
@@ -225,7 +240,7 @@ const Wrapper = styled.div`
             margin-bottom: 100px;
 
             ${media(
-                "tablet",
+                600,
                 `
                     padding: 5px;
                     margin-bottom: 60px;
@@ -233,7 +248,8 @@ const Wrapper = styled.div`
             )}
 
             p {
-                line-height: 1.25;
+                line-height: 1.5;
+                text-align: justify;
             }
             
             :last-child {
@@ -242,7 +258,7 @@ const Wrapper = styled.div`
         }
     }
     ${media(
-        "tablet",
+        600,
         `
             width: 100%;
             max-width: none;

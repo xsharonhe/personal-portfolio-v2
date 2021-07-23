@@ -28,6 +28,7 @@ export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
             padding: 20px 0;
+            line-height: 1.5;
         }
         a {
             text-decoration: none!important;
@@ -42,7 +43,7 @@ export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
         }
         @media only screen and (max-width: 864px) {
             body {
-                font-size: 18px;
+                font-size: 20px;
             }
         }
         @media only screen and (max-width: 600px) {

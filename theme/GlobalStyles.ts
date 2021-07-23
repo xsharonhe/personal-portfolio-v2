@@ -48,7 +48,7 @@ export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
         }
         @media only screen and (max-width: 600px) {
             body {
-                font-size: 16px;
+                font-size: 18px;
             }
         }
     `};

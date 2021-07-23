@@ -37,7 +37,7 @@ export default function wip({
     contents
 }: IWipProps) {
     return (
-        <PageLayout title="Work In Progress">
+        <SPageLayout title="Work In Progress">
             <Wrapper>
                 <ul>
                     {all_dates.map((wip, index) => {
@@ -78,7 +78,7 @@ export default function wip({
                     })}
                 </ul>
             </Wrapper>
-        </PageLayout>
+        </SPageLayout>
     )
 };
 
@@ -108,6 +108,9 @@ export const getStaticProps: GetStaticProps = async () => {
     return { props: { all_dates, contents } };
 };
 
+const SPageLayout = styled(PageLayout)`
+    margin-bottom: 40px;
+`;
 const Content = styled.div`
     padding: 0 0 5em 1em;
     display: flex;

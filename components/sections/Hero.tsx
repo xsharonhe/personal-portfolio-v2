@@ -106,7 +106,7 @@ const Wrapper = styled.div`
 const SubHeadline = styled.p`
     span {  
         color: black;
-        font-size: 15px;
+        font-size: 18px;
     }
     ${media(
         "half_laptop",

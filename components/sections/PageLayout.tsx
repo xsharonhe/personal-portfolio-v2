@@ -8,8 +8,8 @@ interface IPageLayoutProps {
     title?: string;
 };
 
-export const PageLayout = ({ children, title }: IPageLayoutProps) => (
-    <div> 
+export const PageLayout = ({ children, title, ...props }: IPageLayoutProps) => (
+    <div {...props}> 
         <Navbar />
         {!!title && (
             <Wrapper>

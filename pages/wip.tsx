@@ -247,13 +247,13 @@ const Wrapper = styled.div`
 
         li {
             padding: 20px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
 
             ${media(
                 600,
                 `
                     padding: 5px;
-                    margin-bottom: 50px;
+                    margin-bottom: 20px;
                 `
             )}
 

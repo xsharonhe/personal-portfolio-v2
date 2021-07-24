@@ -247,13 +247,13 @@ const Wrapper = styled.div`
 
         li {
             padding: 20px;
-            margin-bottom: 100px;
+            margin-bottom: 40px;
 
             ${media(
                 600,
                 `
                     padding: 5px;
-                    margin-bottom: 60px;
+                    margin-bottom: 50px;
                 `
             )}
 
@@ -263,7 +263,7 @@ const Wrapper = styled.div`
             }
             
             :last-child {
-                margin-bottom: 60px;
+                margin-bottom: 40px;
             }
         }
     }

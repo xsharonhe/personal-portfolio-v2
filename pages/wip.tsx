@@ -196,6 +196,7 @@ const Subtitle = styled.h3`
     font-weight: normal;
     font-style: italic;
     margin-top: -10px;
+    padding: 0 5px;
     ${({ theme }) => `
         font-family: ${theme.font.body};
     `}

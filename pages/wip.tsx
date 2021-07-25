@@ -37,7 +37,12 @@ export default function wip({
     contents
 }: IWipProps) {
     return (
-        <PageLayout title="Work In Progress">
+        <PageLayout title="Works In Progress">
+            <Subtitle>
+                A behind the scenes view at my 
+                works in progress, and random 
+                tech inspirations.
+            </Subtitle>
             <Wrapper>
                 <ul>
                     {all_dates.map((wip, index) => {
@@ -183,6 +188,23 @@ const Content = styled.div`
             }
         }
     }
+`;
+const Subtitle = styled.h3`
+    font-size: 20px;
+    color: #AAAAAA;
+    text-align: center;
+    font-weight: normal;
+    font-style: italic;
+    margin-top: -10px;
+    ${({ theme }) => `
+        font-family: ${theme.font.body};
+    `}
+    ${media(
+        "tablet",
+        `
+            font-size: 16px;
+        `
+    )}
 `;
 const IconHolder = styled.div`
     margin-right: 20px;

@@ -35,23 +35,6 @@ const getShowcaseComponent = (frontMatter: Omit<IProjectProps, "slug">,) => {
                     </div>
                 </>
             );
-        case "pump":
-            return (
-                <>
-                    <div>
-                        <h4>github repo:</h4>
-                        <a href={`${frontMatter.links[0]}`} target="_blank" rel="noopener noreferrer">
-                            {frontMatter.captions[0]}
-                        </a>
-                    </div>
-                    <div>
-                        <h4>ui library:</h4>
-                        <a href={`${frontMatter.links[0]}`} target="_blank" rel="noopener noreferrer">
-                            {frontMatter.captions[1]}
-                        </a>
-                    </div>
-                </>
-            );
         case "default":
             return (
                 <>

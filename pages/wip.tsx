@@ -1,6 +1,7 @@
 import { GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 import styled from "styled-components";
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
@@ -37,7 +38,14 @@ export default function wip({
     contents
 }: IWipProps) {
     return (
-        <PageLayout title="Works In Progress">
+       <>
+            <Head>
+                <meta
+                    name="description"
+                    content="A behind the scenes view at Sharon's works in progress, and random tech inspirations."
+                />
+            </Head>
+            <PageLayout title="Works In Progress">
             <Subtitle>
                 A behind the scenes view at my 
                 works in progress, and random 
@@ -84,6 +92,7 @@ export default function wip({
                 </ul>
             </Wrapper>
         </PageLayout>
+       </>
     )
 };
 

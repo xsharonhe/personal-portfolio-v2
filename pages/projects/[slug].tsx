@@ -98,23 +98,31 @@ const ProjectsPage: React.FC<IProjectsPageProps> = ({
     frontMatter
 }) => {
     return (
-        <PageLayout title={frontMatter.title}>
-            <Wrapper>
-                {frontMatter.links.length > 0 && (
-                    <div>
-                        <Icon as={TerminalFill} />
-                    </div>
-                )}
-                <Showcase>
-                    {getShowcaseComponent(frontMatter)}
-                </Showcase>
-                <br />
-                <h3 style={{ fontWeight: 600 }}>The Process</h3>
-                <MDXWrapper>
-                    <MDXRemote {...source} />
-                </MDXWrapper>
-            </Wrapper>
-        </PageLayout>
+        <>
+            <Head>
+                <meta
+                    name="description"
+                    content={frontMatter.subtitle}
+                />
+            </Head>
+            <PageLayout title={frontMatter.title}>
+                <Wrapper>
+                    {frontMatter.links.length > 0 && (
+                        <div>
+                            <Icon as={TerminalFill} />
+                        </div>
+                    )}
+                    <Showcase>
+                        {getShowcaseComponent(frontMatter)}
+                    </Showcase>
+                    <br />
+                    <h3 style={{ fontWeight: 600 }}>The Process</h3>
+                    <MDXWrapper>
+                        <MDXRemote {...source} />
+                    </MDXWrapper>
+                </Wrapper>
+            </PageLayout>
+        </>
     );
 };
 

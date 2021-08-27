@@ -1,4 +1,5 @@
 import { GetStaticProps } from "next";
+import Head from "next/head";
 import styled from "styled-components";
 import { PageLayout } from "../components/sections";
 import { IProjectProps, Project } from "../components/Containers/Project";
@@ -11,26 +12,34 @@ export interface IProjectsProps extends React.HTMLAttributes<HTMLDivElement>{
 
 export default function Projects({ projects }: IProjectsProps) {
     return (
-        <PageLayout title="Projects">
-            <Wrapper>
-                {projects.map(project => (
-                    <Project 
-                        key={project.slug}
-                        slug={project.slug}
-                        priority={project.priority}
-                        thumbnail={project.thumbnail}
-                        title={project.title}
-                        description={project.description}
-                        tags={project.tags}
-                        images={project.images}
-                        links={project.links}
-                        captions={project.captions}
-                        achievements={project.achievements}
-                        label={project.label}
-                    />
-                ))}
-            </Wrapper>
-        </PageLayout>
+        <>
+            <Head>
+                <meta
+                    name="description"
+                    content="A look inside Sharon He's personal and community projects."
+                />
+            </Head>
+            <PageLayout title="Projects">
+                <Wrapper>
+                    {projects.map(project => (
+                        <Project 
+                            key={project.slug}
+                            slug={project.slug}
+                            priority={project.priority}
+                            thumbnail={project.thumbnail}
+                            title={project.title}
+                            description={project.description}
+                            tags={project.tags}
+                            images={project.images}
+                            links={project.links}
+                            captions={project.captions}
+                            achievements={project.achievements}
+                            label={project.label}
+                        />
+                    ))}
+                </Wrapper>
+            </PageLayout>
+        </>
     )
 };
 

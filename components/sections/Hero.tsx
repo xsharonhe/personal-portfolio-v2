@@ -17,7 +17,13 @@ const getCodeSnippet = () => {
             <span>
                 {'    "currently": '}
                 <span style={{ color: "#f1fa8c" }}>
-                    {'"@geotab, @pumprofessionals, @waterloo"'}
+                    {'"@pumprofessionals, @waterloo"'}
+                </span>
+            </span>
+            <span>
+                {'    "prev": '}
+                <span style={{ color: "#f1fa8c" }}>
+                    {'"@geotab"'}
                 </span>
             </span>
             <span>
@@ -30,7 +36,7 @@ const getCodeSnippet = () => {
                 {'        "infrastructure",'}
             </span>
             <span style={{ color: "#f1fa8c" }}>
-                {'        "econ"'}
+                {'        "predictive analytics"'}
             </span>
             <span>
                 {'    ],'}
@@ -60,7 +66,7 @@ export function Hero() {
                 <br />
                 <CodeWrapper>
                     <CodeBlock 
-                        lineNumbers={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+                        lineNumbers={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
                         codeSnippet={getCodeSnippet()}
                     />
                 </CodeWrapper>

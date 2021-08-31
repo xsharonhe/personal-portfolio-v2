@@ -14,7 +14,7 @@ export default function About() {
             <Head>
                 <meta
                     name="description"
-                    content="Sharon He is a 19 y/o developer from Toronto, Canada who is passionate about data, infrastructure, and economics."
+                    content="Sharon He is a 19 y/o developer from Toronto, Canada who is passionate about data, infrastructure, and predictive analytics."
                 />
             </Head>
             <PageLayout title="About">

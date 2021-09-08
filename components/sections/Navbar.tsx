@@ -67,7 +67,7 @@ export function Navbar() {
                             </Link>
                         </Highlight>
                     </NavItem> 
-                        <Button>
+                        {/* <Button>
                             <a
                                 href="/SharonHe_Resume.pdf"
                                 target="_blank"
@@ -76,7 +76,7 @@ export function Navbar() {
                             >
                                 Resume
                             </a>
-                        </Button>
+                        </Button> */}
             </NavItems>
             {!!isHidden && <BottomNavigation isHidden={isHidden} />}
         </SNavbar>
@@ -117,12 +117,13 @@ const Section = styled.div`
     )};
 `;
 const NavItem = styled.span`
-    margin-right: 5vw;
+    /* margin-right: 5vw; */
+    margin-left: 5vw;
     font-size: 20px;
     ${media(
         700,
         `
-            margin-right: 0;
+            margin-left: 0;
             padding-bottom: 20px;
             `
     )};

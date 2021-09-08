@@ -60,7 +60,7 @@ export default function Home({ projects }: IProjectsProps) {
                   </a>
               ))}
           </IconsWrapper>
-          <ResumeWrapper> 
+          {/* <ResumeWrapper> 
               <h2>
                   <SHighlight>
                     Download My Resume?
@@ -75,7 +75,7 @@ export default function Home({ projects }: IProjectsProps) {
                       Take a copy.
                 </Button>
               </a>
-            </ResumeWrapper>
+            </ResumeWrapper> */}
         </ConnectWrapper>
       </Wrapper>
     </PageLayout>
@@ -177,40 +177,40 @@ const SIcon = styled.svg`
     margin: 0 20px;
     display: inline-block;
 `;
-const ResumeWrapper = styled.div`
-    padding-top: 40px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  
-    margin: auto;
-    text-align: center;
+// const ResumeWrapper = styled.div`
+//     padding-top: 40px;
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;  
+//     margin: auto;
+//     text-align: center;
 
-    h2 {
-      font-size: 32px;
-      ${media(
-        "tablet",
-        `
-            font-size: 24px;
-            `
-      )}; 
-    }
+//     h2 {
+//       font-size: 32px;
+//       ${media(
+//         "tablet",
+//         `
+//             font-size: 24px;
+//             `
+//       )}; 
+//     }
 
-    a {
-      margin: auto;
-    }
+//     a {
+//       margin: auto;
+//     }
 
-    button {
-      color: white;
-      :hover {
-        transform: scale(1.1);
-        transition: all 0.3s ease-in;
-      }
-    }
-`;
-const SHighlight = styled(Highlight)`
-  :hover {
-    color: black;
-    cursor: auto;
-  }
-`;
+//     button {
+//       color: white;
+//       :hover {
+//         transform: scale(1.1);
+//         transition: all 0.3s ease-in;
+//       }
+//     }
+// `;
+// const SHighlight = styled(Highlight)`
+//   :hover {
+//     color: black;
+//     cursor: auto;
+//   }
+// `;

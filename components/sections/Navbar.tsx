@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "../Inputs";
 import { ReorderThree } from "@styled-icons/ionicons-solid/ReorderThree";
 import { CloseOutline } from "@styled-icons/evaicons-outline/CloseOutline";
 
@@ -90,7 +89,7 @@ const SNavbar = styled.div`
     align-items: center;
     padding: 0 3%;
     ${media(
-        700,
+        800,
         `
             flex-direction: column;
             `
@@ -106,9 +105,9 @@ const Section = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
+    width: 90%;
     ${media(
-        700,
+        800,
         `
             display: flex;
             flex-direction: row;
@@ -121,7 +120,7 @@ const NavItem = styled.span`
     margin-left: 5vw;
     font-size: 20px;
     ${media(
-        700,
+        800,
         `
             margin-left: 0;
             padding-bottom: 20px;
@@ -132,11 +131,11 @@ interface INavItemsProps {
     isHidden: boolean;
 };
 const NavItems = styled(Section)<INavItemsProps>`
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 800px) {
         display: ${(props) => (props.isHidden ? "flex" : "none")};
     }
     ${media(
-        700,
+        800,
         `
             padding-bottom: 20px;
             flex-direction: column;
@@ -156,7 +155,7 @@ const Highlight = styled.span`
     `};
 `;
 const BottomNavigation = styled.hr<INavItemsProps>`
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 800px) {
         display: ${(props) => (props.isHidden ? "flex" : "none")};
         border-bottom: 3px solid black;
         width: 80%;
@@ -167,7 +166,7 @@ const NavbarIcon = styled.svg`
     width: 60px;
     display: none;
     ${media(
-        700,
+        800,
         `
             display: flex;
             cursor: pointer;

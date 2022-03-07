@@ -15,10 +15,16 @@ const getCodeSnippet = () => {
                 {"= {"}
             </span>
             <span>
-                {'    "currently": '}
-                <span style={{ color: "#f1fa8c" }}>
-                    {'"@pumprofessionals, @waterloo"'}
-                </span>
+                {'    "currently": ['}
+            </span>
+            <span style={{ color: "#f1fa8c" }}>
+                {'        "@kiavi, @pumprofessionals, '}
+            </span>
+            <span style={{ color: "#f1fa8c" }}>
+                {'        @uwblueprint, @waterloo'}
+            </span>
+            <span>
+                {'    ],'}
             </span>
             <span>
                 {'    "prev": '}
@@ -30,10 +36,10 @@ const getCodeSnippet = () => {
                 {'    "interests": ['}
             </span>
             <span style={{ color: "#f1fa8c" }}>
-                {'        "data",'}
+                {'        "data + databases",'}
             </span>
             <span style={{ color: "#f1fa8c" }}>
-                {'        "infrastructure",'}
+                {'        "distributed systems",'}
             </span>
             <span style={{ color: "#f1fa8c" }}>
                 {'        "predictive analytics"'}
@@ -50,6 +56,7 @@ const getCodeSnippet = () => {
             <span>
                 {"};"}
             </span>
+            <span>{' '}</span>
         </>
     )
 }
@@ -66,7 +73,7 @@ export function Hero() {
                 <br />
                 <CodeWrapper>
                     <CodeBlock 
-                        lineNumbers={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+                        lineNumbers={Array.from({ length: 14 }, (_, i) => i + 1)}
                         codeSnippet={getCodeSnippet()}
                     />
                 </CodeWrapper>

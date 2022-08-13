@@ -14,7 +14,7 @@ export default function About() {
             <Head>
                 <meta
                     name="description"
-                    content="Sharon He is a 19 y/o developer from Toronto, Canada who is passionate about data, infrastructure, and predictive analytics."
+                    content="Sharon He is a 20 y/o developer from Toronto, Canada who is passionate about data, infrastructure, and predictive analytics."
                 />
             </Head>
             <PageLayout title="About">
@@ -36,7 +36,18 @@ export default function About() {
                                 society faces.
                             </p>
                             <p>
-                                {"I recently interned as a software developer at "}
+                                {"I've recently interned as a software engineer at "}
+                                <a
+                                    href="https://www.kiavi.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Highlight>
+                                        Kiavi
+                                    </Highlight>
+                                </a>
+                                {" and worked on designing APIs and services, and building their new event-sourcing platform. "}
+                                {"I've also interned as a software developer at "}
                                 <a
                                     href="https://geotab.com/"
                                     target="_blank"
@@ -51,6 +62,16 @@ export default function About() {
                             </p>
                             <p>
                                 {"These days, I spend my time learning about infastructure, "}
+                                <a
+                                    href="https://www.databass.dev/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                   <Highlight>
+                                        database internals
+                                    </Highlight> 
+                                </a>
+                                {", "}
                                 <a
                                     href="https://dataintensive.net/"
                                     target="_blank"

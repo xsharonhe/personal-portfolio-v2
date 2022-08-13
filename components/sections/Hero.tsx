@@ -18,10 +18,7 @@ const getCodeSnippet = () => {
                 {'    "currently": ['}
             </span>
             <span style={{ color: "#f1fa8c" }}>
-                {'        "@kiavi, @pumprofessionals, '}
-            </span>
-            <span style={{ color: "#f1fa8c" }}>
-                {'        @uwblueprint, @waterloo'}
+                {'        "@pumprofessionals, @uwaterloo'}
             </span>
             <span>
                 {'    ],'}
@@ -29,14 +26,14 @@ const getCodeSnippet = () => {
             <span>
                 {'    "prev": '}
                 <span style={{ color: "#f1fa8c" }}>
-                    {'"@geotab"'}
+                    {'"@kiavi, @geotab"'}
                 </span>
             </span>
             <span>
                 {'    "interests": ['}
             </span>
             <span style={{ color: "#f1fa8c" }}>
-                {'        "data + databases",'}
+                {'        "data + database internals",'}
             </span>
             <span style={{ color: "#f1fa8c" }}>
                 {'        "distributed systems",'}
@@ -67,8 +64,8 @@ export function Hero() {
             <Section>
                 <Title>Hi, I&apos;m Sharon</Title>
                 <SubHeadline>
-                    I love all things code and numbers. I am passionate about creating remarkable 
-                    digital experiences with a focus on data and analytics. 
+                    I love all things code and numbers. I am passionate about back-end engineering,
+                    databases, and building scalable and efficient systems. 
                 </SubHeadline>
                 <br />
                 <CodeWrapper>

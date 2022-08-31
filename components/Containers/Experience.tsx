@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Tag } from "../Inputs";
 import { media } from "../../utils";
 
-export interface IProjectProps {
+export interface IExperienceProps {
     linkTo?: string;
     title: string;
     tags: string[];
@@ -18,7 +18,7 @@ export function Experience ({
     tags,
     date,
     content,
-}: IProjectProps) {
+}: IExperienceProps) {
     return (
         <Wrapper>
             <a

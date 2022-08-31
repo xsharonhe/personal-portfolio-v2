@@ -90,6 +90,7 @@ export default function Experiences() {
                     <div>
                         {experiences[2022].map(exp => (
                             <Experience
+                                key={exp.company}
                                 title={exp.company}
                                 content={exp.content}
                                 position={exp.position}
@@ -103,6 +104,7 @@ export default function Experiences() {
                     <div>
                         {experiences[2021].map(exp => (
                             <Experience
+                                key={exp.company}
                                 title={exp.company}
                                 content={exp.content}
                                 position={exp.position}
@@ -116,6 +118,7 @@ export default function Experiences() {
                     <div>
                         {experiences[2020].map(exp => (
                             <Experience
+                                key={exp.company}
                                 title={exp.company}
                                 content={exp.content}
                                 position={exp.position}

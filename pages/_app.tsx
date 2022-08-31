@@ -23,14 +23,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="title" content="Sharon He" />
         <meta
           name="description"
-          content="Sharon He is a 19 y/o developer from Toronto, Canada who is passionate about data, distributed systems, and predictive analytics."
+          content="Sharon He is a 20 y/o developer from Toronto, Canada who is passionate about data, distributed systems, and building reliable and scalable systems."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://sharonhe.me" />
         <meta property="og:title" content="Sharon He" />
         <meta
           property="og:description"
-          content="Sharon He is a 19 y/o developer from Toronto, Canada who is passionate about data, distributed systems, and predictive analytics."
+          content="Sharon He is a 20 y/o developer from Toronto, Canada who is passionate about data, distributed systems, and building reliable and scalable systems."
         />
         <meta
           property="og:image"

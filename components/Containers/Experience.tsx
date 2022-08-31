@@ -1,66 +1,49 @@
-import Link from "next/link";
-import Image from "next/image";
 import styled from "styled-components";
 import { Tag } from "../Inputs";
 import { media } from "../../utils";
 
-export interface IProjectProps {
-    slug: string;
-    priority: number;
-    thumbnail: string;
+export interface IExperienceProps {
+    linkTo?: string;
     title: string;
-    subtitle?: string;
-    description: string;
     tags: string[];
-    images?: string[];
-    links: string[];
-    captions: string[];
-    achievements?: string;
-    label: string;
+    position: string;
+    content: string;
+    date: string;
 };
 
-export function Project ({ 
-    slug,
-    priority,
-    thumbnail,
-    subtitle = "",
+export function Experience ({ 
+    linkTo,
     title,
-    description,
+    position,
     tags,
-    images = [],
-    links = [],
-    captions = [],
-    achievements = "",
-    label
-}: IProjectProps) {
+    date,
+    content,
+}: IExperienceProps) {
     return (
         <Wrapper>
-            <Link href={`/projects/${slug}`}>
-                <a aria-label={title}>
-                    <Section>
-                        <ImageWrapper>
-                            <Image
-                                alt={title}
-                                src={thumbnail}
-                                height={300}
-                                width={350}
-                            />
-                        </ImageWrapper>
-                        <Content>
-                            {!!achievements && <SubContent>{achievements}</SubContent>}
-                            <Title>{title}</Title>
-                            <TagContainer>
-                                {tags.map(tag => (
-                                    <STag key={tag}>{tag.toUpperCase()}</STag>
-                                ))}
-                            </TagContainer>
-                            <p>
-                                {description}
-                            </p>
-                        </Content>
-                    </Section>
-                </a>
-            </Link>
+            <a
+                href={linkTo}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "white" }}
+            >
+                <Section>
+                    <Content>
+                        <SubContent>{date}</SubContent>
+                        <Title>{title}{", "} 
+                            <span>{position}</span>
+                        </Title>
+                        <TagContainer>
+                            {tags.map(tag => (
+                                <STag key={tag}>{tag.toUpperCase()}</STag>
+                            ))}
+                        </TagContainer>
+                        <p>
+                            {content}
+                        </p>
+                    </Content>
+                </Section>
+            </a>
         </Wrapper>
     )
 }
@@ -110,7 +93,7 @@ const Section = styled.div`
     )}
 `;
 const Content = styled.div`
-    width: 60%;
+    width: 100%;
     padding: 15px 25px 35px 35px;
     background-color: black;
     color: white;
@@ -119,15 +102,11 @@ const Content = styled.div`
     ${media(
         "tablet",
         `
-            width: 100%;
             text-align: center;
             padding: 0 0 30px 0;
             border-top-right-radius: 0;
         `
-    )}
-    @media only screen and (min-width: 1700px) {
-        width: 100%;
-    }
+    )};
 `;
 const SubContent = styled.p`
     ${({ theme }) => ` 
@@ -153,6 +132,10 @@ const Title = styled.h3`
             font-size: 24px;
         `
     )};
+    span {
+        color: white;
+        font-size: 20px;
+    }
 `;
 const TagContainer = styled.div`
     flex-direction: row;

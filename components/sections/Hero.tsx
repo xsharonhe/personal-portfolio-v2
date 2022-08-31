@@ -62,10 +62,9 @@ export function Hero() {
     return (
         <Wrapper>
             <Section>
-                <Title>Hi, I&apos;m Sharon</Title>
+                <Title>Hi, I&apos;m Sharon!</Title>
                 <SubHeadline>
-                    I love all things code and numbers. I am passionate about back-end engineering,
-                    databases, and building scalable and efficient systems. 
+                    I love all things code and numbers. I am passionate about problem solving, and building scalable and efficient systems. 
                 </SubHeadline>
                 <br />
                 <CodeWrapper>
@@ -83,15 +82,6 @@ export function Hero() {
                     width={600}
                     height={600}
                 />
-                <div>
-                    <Link href="/about">
-                        <a>
-                            <Highlight>
-                                Why Puzzles?
-                            </Highlight>
-                        </a>
-                    </Link>
-                </div>
             </PuzzleContainer>
         </Wrapper>
     );

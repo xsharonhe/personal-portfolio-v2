@@ -4,3 +4,5 @@
 <p align="center">
   Second iteration of my personal portfolio website, made with Next.js
 </p>
+
+My thought process while designing this website? See my writeup (on my deployed website!) [here](https://www.sharonhe.me/projects/personal-portfolio-v2).

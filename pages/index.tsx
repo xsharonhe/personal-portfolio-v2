@@ -40,13 +40,15 @@ export default function Home({ projects }: IHomeProps) {
                 <h1>About Me</h1>
               </div>
               <HWrapper>
-                <Button>
-                  <Link href="/experiences">
-                    <a> 
-                      See all experiences
-                    </a>
-                  </Link>
-                </Button>
+                <div>
+                  <Button>
+                    <Link href="/experiences">
+                      <a> 
+                        See all experiences
+                      </a>
+                    </Link>
+                  </Button>
+                </div>
               </HWrapper>
           </SectionWrapper>
           <UpperHeading>

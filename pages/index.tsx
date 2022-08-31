@@ -162,13 +162,15 @@ export default function Home({ projects }: IHomeProps) {
               <h1>Showcase Projects</h1>
             </div>
             <HWrapper>
-              <Button>
-                <Link href="/projects">
-                  <a> 
-                    See all projects
-                  </a>
-                </Link>
-              </Button>
+              <div>
+                <Button>
+                  <Link href="/projects">
+                    <a> 
+                      See all projects
+                    </a>
+                  </Link>
+                </Button>
+              </div>
             </HWrapper>
         </SectionWrapper>
         <ProjectsWrapper>
@@ -302,12 +304,27 @@ const SectionWrapper = styled.div`
   display: flex;
   flex-direction: row;
   padding: 0 3%;
+  ${media(
+    600,
+    `
+        justify-content: center;
+        flex-direction: column;
+      `
+)};
 `
 const HWrapper = styled.div`
   margin: 0 3%;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  div {
+    ${media(
+      600,
+      `
+          margin: auto;
+        `
+    )};
+  }
   a {
     color: white;
   }

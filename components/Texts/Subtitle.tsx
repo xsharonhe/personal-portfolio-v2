@@ -24,6 +24,7 @@ const StyledSubtitle = styled.h3`
         "tablet",
         `
             font-size: 18px;
+            margin: -10px 10px 0 10px;
         `
     )}
 `;

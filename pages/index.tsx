@@ -12,7 +12,6 @@ import { Button } from "../components/Inputs";
 import { Hero, PageLayout } from "../components/sections";
 import { getShowcaseProjects } from "../utils/projectsUtils";
 import { media, CONSTANTS } from "../utils";
-import { IExperienceProps } from "../components/Containers/Experience";
 import { IProjectProps } from "../components/Containers/Project";
 
 const ICONS_LIST = [

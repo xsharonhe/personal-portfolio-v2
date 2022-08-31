@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Head from "next/head";
 
 import { Subtitle } from "../components/Texts";
 import { Experience } from "../components/Containers";
@@ -74,12 +73,6 @@ const experiences = {
 export default function Experiences() {
     return (
         <>
-            <Head>
-                <meta
-                    name="description"
-                    content="Sharon He is a 20 y/o developer from Toronto, Canada who is passionate about data, infrastructure, and predictive analytics."
-                />
-            </Head>
             <PageLayout title="Experiences">
                 <Wrapper>
                     <Subtitle>

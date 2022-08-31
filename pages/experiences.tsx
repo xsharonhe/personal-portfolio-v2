@@ -39,7 +39,7 @@ const experiences = {
             content: "Building and exploring data pipelines and infrastructure with Docker, Kubernetes, GCP, Helm, Prometheus, Grafana, and so on. Enhanced some data reporting features with C# too. Also unit testing.",
             tags: ["Internship"],
             date: "May - Aug 2021",
-            linkTo: "https://www.kiavi.com/"
+            linkTo: "https://www.geotab.com/"
         },
         {
             company: "CheaprEats",

@@ -60,13 +60,3 @@ export function getAllExperiences(fields: string[] = []): Items[] {
 
     return experiences;
 };
-
-export function getShowcaseExperiences(fields: string[] = []): Items[] {
-    const filePaths = getExperienceFilePaths();
-    const experiences = filePaths
-        .map((filePath) => getExperienceItems(filePath, fields))
-        .filter(project => parseInt(project.priority) < 4)
-        .sort((exp1, project2) => (exp1.priority > project2.priority ? 1 : -1));
-
-    return experiences;
-};

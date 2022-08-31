@@ -82,15 +82,6 @@ export function Hero() {
                     width={600}
                     height={600}
                 />
-                <div>
-                    <Link href="/about">
-                        <a>
-                            <Highlight>
-                                Why Puzzles?
-                            </Highlight>
-                        </a>
-                    </Link>
-                </div>
             </PuzzleContainer>
         </Wrapper>
     );

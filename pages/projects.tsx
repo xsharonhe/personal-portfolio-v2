@@ -5,6 +5,7 @@ import { PageLayout } from "../components/sections";
 import { IProjectProps, Project } from "../components/Containers/Project";
 import { getAllProjects } from "../utils/projectsUtils";
 import { media } from "../utils";
+import { Subtitle } from "../components/Texts";
 
 export interface IProjectsProps extends React.HTMLAttributes<HTMLDivElement>{
     projects: IProjectProps[];
@@ -21,6 +22,10 @@ export default function Projects({ projects }: IProjectsProps) {
             </Head>
             <PageLayout title="Projects">
                 <Wrapper>
+                    <Subtitle>
+                        A repository of all my personal and collaborative projects,
+                        and how I&apos;ve approached them.
+                    </Subtitle>
                     {projects.map(project => (
                         <Project 
                             key={project.slug}

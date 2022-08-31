@@ -39,11 +39,11 @@ export function Navbar() {
                             </Link>
                         </Highlight>
                     </NavItem> 
-                    <NavItem key={`navitem__about`}>
+                    <NavItem key={`navitem__experiences`}>
                         <Highlight>
-                            <Link href="/about">
+                            <Link href="/experiences">
                                 <a>
-                                    About
+                                    Experiences
                                 </a>
                             </Link>
                         </Highlight>

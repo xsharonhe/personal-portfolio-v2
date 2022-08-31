@@ -38,14 +38,14 @@ export function Project ({
             <Link href={`/projects/${slug}`}>
                 <a aria-label={title}>
                     <Section>
-                    <ImageWrapper>
-                        <Image
-                            alt={title}
-                            src={thumbnail}
-                            height={300}
-                            width={350}
-                        />
-                    </ImageWrapper>
+                        <ImageWrapper>
+                            <Image
+                                alt={title}
+                                src={thumbnail}
+                                height={300}
+                                width={350}
+                            />
+                        </ImageWrapper>
                         <Content>
                             {!!achievements && <SubContent>{achievements}</SubContent>}
                             <Title>{title}</Title>

@@ -65,7 +65,7 @@ export function getShowcaseProjects(fields: string[] = []): Items[] {
     const filePaths = getProjectFilePaths();
     const projects = filePaths
         .map((filePath) => getProjectItems(filePath, fields))
-        .filter(project => parseInt(project.priority) < 5)
+        .filter(project => parseInt(project.priority) < 4)
         .sort((project1, project2) => (project1.priority > project2.priority ? 1 : -1));
 
     return projects;

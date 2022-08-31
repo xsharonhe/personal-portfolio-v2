@@ -5,7 +5,7 @@ import Head from "next/head";
 
 import { Highlight } from "../components/Texts";
 import Profile from "../public/profile-1.png";
-import { PageLayout } from "../components/sections";
+import { PageLayout, BriefHistory } from "../components/sections";
 import { media } from "../utils";
 
 export default function About() {
@@ -57,8 +57,15 @@ export default function About() {
                                         Geotab
                                     </Highlight>
                                 </a>
-                                {" working on their fleet management solutions and data pipelines. I also have experience in "}
-                                {"website development, data analytics, machine learning, and cloud computing."}
+                                {" working on their fleet management solutions and data pipelines. See more about my experiences "}
+                                <Link href="/about">
+                                    <a>
+                                        <Highlight>
+                                            down below
+                                        </Highlight>
+                                    </a>
+                                </Link>
+                                {"."}
                             </p>
                             <p>
                                 {"These days, I spend my time learning about infastructure, "}
@@ -102,11 +109,6 @@ export default function About() {
                                 </Link>
                                 {" from scratch."}
                             </p>
-                            <p>
-                                Fun fact: I was so fascinated by flat character designs
-                                when I was picking up code that I taught myself Illustrator! That&apos;s where a lot of 
-                                the designs on this website are from. Time to learn photoshop now.
-                            </p>
                         </Content>
                     </UpperHeading>
                     <MoreContent>
@@ -119,8 +121,10 @@ export default function About() {
                                         </Highlight>
                                     </a>
                                 </Link>
+                            .
                         </p>
                     </MoreContent>
+                    <BriefHistory />
                 </Wrapper>
             </PageLayout>
         </>

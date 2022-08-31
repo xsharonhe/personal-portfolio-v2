@@ -1,15 +1,17 @@
 import { GetStaticProps } from "next";
+import Link from "next/link";
 import styled from "styled-components";
 import { Linkedin } from '@styled-icons/bootstrap/Linkedin';
 import { Github } from '@styled-icons/bootstrap/Github';
 
-import { IProjectsProps } from "./projects";
-import { Project } from "../components/Containers";
+import { Project, Experience } from "../components/Containers";
 import { Button } from "../components/Inputs";
-import { Highlight } from "../components/Texts";
 import { Hero, PageLayout } from "../components/sections";
 import { getShowcaseProjects } from "../utils/projectsUtils";
+import { getShowcaseExperiences } from "../utils/experienceUtils";
 import { media, CONSTANTS } from "../utils";
+import { IExperienceProps } from "../components/Containers/Experience";
+import { IProjectProps } from "../components/Containers/Project";
 
 const ICONS_LIST = [
   {
@@ -22,11 +24,35 @@ const ICONS_LIST = [
   },
 ];
 
-export default function Home({ projects }: IProjectsProps) {
+interface IHomeProps {
+  projects: IProjectProps[],
+  experiences: IExperienceProps[]
+}
+
+export default function Home({ projects, experiences }: IHomeProps) {
   return (
     <PageLayout>
       <Wrapper>
         <Hero />
+        <h1>Experiences</h1> 
+        <ExperiencesWrapper>
+          {experiences.map(exp => (
+            <Experience 
+              company={exp.company}
+              position={exp.position}
+              priority={exp.priority}
+            />
+          ))}
+          <ButtonWrapper>
+            <Button>
+              <Link href="/about#briefhistory">
+                <a> 
+                  See more experiences
+                </a>
+              </Link>      
+            </Button>
+          </ButtonWrapper>
+        </ExperiencesWrapper>
         <h1>Showcase Projects</h1>
         <ProjectsWrapper>
           {projects.map(project => (
@@ -45,6 +71,15 @@ export default function Home({ projects }: IProjectsProps) {
                 label={project.label}
             />
           ))}
+          <ButtonWrapper>
+            <Button>
+              <Link href="/projects">
+                <a> 
+                  See more projects
+                </a>
+              </Link>
+            </Button>
+          </ButtonWrapper>
         </ProjectsWrapper>
         <ConnectWrapper>
           <h2>Let&apos;s Connect!</h2>
@@ -95,8 +130,13 @@ export const getStaticProps: GetStaticProps = async () => {
       "priority",
       "achievements"
   ]);
+  const experiences = getShowcaseExperiences([
+    "company",
+    "position",
+    "priority"
+  ])
 
-  return { props: { projects } };
+  return { props: { projects, experiences } };
 };
 
 const Wrapper = styled.div`
@@ -123,6 +163,18 @@ const Wrapper = styled.div`
             `
     )};
   }
+  a {
+    color: white;
+  }
+`;
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+const ExperiencesWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 `;
 const ProjectsWrapper = styled.div`
   width: 60%;

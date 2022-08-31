@@ -20,6 +20,11 @@ export const GlobalStyle = createGlobalStyle<{theme: DefaultTheme}>`
             height: 100%;
             box-sizing: inherit;
         }
+        h1, h2 {
+            font-size: 50px;
+            font-weight: 600;
+            text-align: center;
+        }
         body {
             font-family: ${theme.font.body};
             font-size: ${theme.size.default};

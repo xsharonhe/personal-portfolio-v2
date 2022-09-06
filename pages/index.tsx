@@ -68,7 +68,7 @@ export default function Home({ projects }: IHomeProps) {
                       society faces.
                   </p>
                   <p>
-                  {"I've recently interned as a software engineer at "}
+                  {"I'm a third year software engineering student at the University of Waterloo. I've recently interned as a software engineer at "}
                   <a
                       href="https://www.kiavi.com/"
                       target="_blank"

@@ -8,6 +8,14 @@ import { media } from "../utils";
 const experiences = {
     2022: [
         {
+            company: "Faire",
+            position: "Backend Engineering Intern",
+            content: "Brand CRM team - working on building brand promotions and customer tables to extract analytics for brands",
+            tags: ["Internship"],
+            date: "Sept - Dec 2022",
+            linkTo: "http://faire.com/",
+        },
+        {
             company: "Kiavi",
             position: "Software Engineering Intern",
             content: "Platform team! Worked on building a data provider microservice to reduce data retrieval times. Other focuses including researching and implementing internal tooling for configuration, monitoring, and communication for all platform services.",

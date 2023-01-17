@@ -26,7 +26,7 @@ const getCodeSnippet = () => {
             <span>
                 {'    "prev": '}
                 <span style={{ color: "#f1fa8c" }}>
-                    {'"@kiavi, @geotab"'}
+                    {'"@faire, @kiavi, @geotab"'}
                 </span>
             </span>
             <span>

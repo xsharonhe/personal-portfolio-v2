@@ -10,7 +10,7 @@ const experiences = {
         {
             company: "Faire",
             position: "Backend Engineering Intern",
-            content: "Brand CRM team - working on building brand promotions and customer tables to extract analytics for brands",
+            content: "Brand CRM team - working on building brand promotions and customer tables to extract analytics for brands.",
             tags: ["Internship"],
             date: "Sept - Dec 2022",
             linkTo: "http://faire.com/",

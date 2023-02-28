@@ -29,7 +29,7 @@ export const PageLayout = ({ children, title, ...props }: IPageLayoutProps) => (
             <p>
                 Developed by Sharon He 
                 &copy; 
-                2021
+                2023
             </p>
         </Copyright>
     </div>
